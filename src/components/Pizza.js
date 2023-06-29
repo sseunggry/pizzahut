@@ -1,12 +1,10 @@
 import {Link} from "react-router-dom";
-import data from '../data/menu_pizza.json';
+import {contentImg} from "../recoil/atoms";
 
-import '../styles/menu.scss';
-
-const contentImg = "/resource/img/contents";
+import menuListData from "../data/menu_list.json";
 
 function Pizza(){
-    const pizza = data.pizzaList;
+    const pizza = menuListData.pizzaList;
     const priceDot = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
@@ -17,7 +15,7 @@ function Pizza(){
                     <li key={idx}>
                         <Link to="">
                             <div className="thumb-img">
-                                {flag ? <span className={`flag ${flag}`}>{flag}</span> : null}
+                                {flag && <span className={`flag ${flag}`}>{flag}</span>}
                                 <div className="img-con">
                                     <img src={`${contentImg}/${img}`} alt={name}/>
                                 </div>
@@ -25,20 +23,20 @@ function Pizza(){
                             <dl className="thumb-txt">
                                 <dt>{name}</dt>
                                 <dd className="price">
-                                    {price.mediumOrigin ? (
+                                    {price.mediumOrigin && (
                                         <p className="list">
                                             <span className="size">M</span>
                                             <span className="sale-price">{priceDot(Math.ceil(price.mediumOrigin * 0.8))}원</span>
                                             <span className="origin-price">{priceDot(price.mediumOrigin)}원</span>
                                         </p>
-                                    ) : null}
-                                    {price.largeOrigin ? (
+                                    )}
+                                    {price.largeOrigin && (
                                         <p className="list">
                                             <span className="size">L</span>
                                             <span className="sale-price">{priceDot(Math.ceil(price.largeOrigin * 0.8))}원</span>
                                             <span className="origin-price">{priceDot(price.largeOrigin)}원</span>
                                         </p>
-                                    ) : null}
+                                    )}
                                 </dd>
                                 <dd className="info-txt">
                                     <span className="c-red">배달 30%</span>

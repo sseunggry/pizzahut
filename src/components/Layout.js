@@ -1,20 +1,25 @@
 import "../styles/layout.scss";
 import Header from "./_inc/Header";
 import BottomMenu from "./_inc/BottomMenu";
+import Footer from "./_inc/Footer";
 
-function Layout({backBtn= null, headTxt, content}){
+function Layout({header, bottomMenu = true, footer, children}){
     return (
         <div className="wrap">
-            <Header
-                backBtn={backBtn}
-                headTxt={headTxt}
-            />
-    
+            {header && (
+                <Header
+                    title={header.title}
+                    backBtn={header.backBtn}
+                />
+            )}
+            
             <div className="container">
-                {content}
+                {children}
             </div>
     
-            <BottomMenu />
+            {footer && <Footer />}
+            
+            {bottomMenu && <BottomMenu />}
         </div>
     )
 }

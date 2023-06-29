@@ -1,12 +1,10 @@
 import {Link} from "react-router-dom";
-import data from '../data/menu_pizza.json';
+import {contentImg} from "../recoil/atoms";
 
-import '../styles/menu.scss';
-
-const contentImg = "/resource/img/contents";
+import menuListData from "../data/menu_list.json";
 
 function Side() {
-    const side = data.sideList;
+    const side = menuListData.sideList;
     const priceDot = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
@@ -17,7 +15,7 @@ function Side() {
                 <li key={idx}>
                     <Link to="">
                         <div className="thumb-img">
-                            {discount ? <span className={`flag discount`}>{discount}%</span> : null}
+                            {discount && <span className={`flag discount`}>{discount}%</span>}
                             <div className="img-con">
                                 <img src={`${contentImg}/${img}`} alt={name}/>
                             </div>
@@ -26,9 +24,11 @@ function Side() {
                             <dt>{name}</dt>
                             <dd className="price">
                                 <span className={discount ? 'origin-price' : 'origin-price large'}>{priceDot(originPrice)}원</span>
-                                {discount ? <span className="sale-price">
-                                    {priceDot(Math.ceil(originPrice*(1-discount/100)))+'원'}
-                                </span> : ''}
+                                {discount && (
+                                    <span className="sale-price">
+                                        {priceDot(Math.ceil(originPrice*(1-discount/100)))+'원'}
+                                    </span>
+                                )}
                             </dd>
                         </dl>
                     </Link>

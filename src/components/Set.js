@@ -1,12 +1,10 @@
 import {Link} from "react-router-dom";
-import data from '../data/menu_pizza.json';
+import {contentImg} from "../recoil/atoms";
 
-import '../styles/menu.scss';
-
-const contentImg = "/resource/img/contents";
+import menuListData from "../data/menu_list.json";
 
 function Set() {
-    const set = data.setList;
+    const set = menuListData.setList;
     const priceDot = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
@@ -17,7 +15,7 @@ function Set() {
                     <li key={idx}>
                         <Link to="">
                             <div className="thumb-img">
-                                {flag ? <span className={`flag ${flag}`}>{flag}</span> : null}
+                                {flag && <span className={`flag ${flag}`}>{flag}</span>}
                                 <div className="img-con">
                                     <img src={`${contentImg}/${img}`} alt={name}/>
                                 </div>

@@ -1,12 +1,6 @@
 import {Link} from "react-router-dom";
-
+import {commonImg} from "../../recoil/atoms";
 import '../../styles/_inc/header.scss';
-
-const commonImg = "/resource/img/common";
-
-const logoImg = "/resource/img/common/logo_color.png";
-const cartImg = "/resource/img/common/ico_cart.png";
-const backBtnImg = "/resource/img/common/ico_back.png";
 
 function Logo(){
     return (
@@ -18,11 +12,11 @@ function Logo(){
     )
 }
 
-function Header({backBtn, headTxt}){
+function Header({backBtn, title}){
     return (
         <header className="header">
             {backBtn ?  <Link className="btn-back"><img src={`${commonImg}/ico_back.png`} alt="" /></Link> :  <Logo />}
-            {headTxt ? <h2 className="head-tit">{headTxt}</h2> : ''}
+            {title ? <h2 className="head-tit">{title}</h2> : ''}
             <Link className="btn-cart">
                 <img src={`${commonImg}/ico_cart.png`} alt="cart" />
             </Link>

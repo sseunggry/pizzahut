@@ -5,9 +5,7 @@ import {menuTabState} from "../recoil/atoms";
 import '../styles/tab.scss';
 
 function Tab({list, addClass, active= 0, link= [], listClass = []}){
-    // const setMenuTab = useSetRecoilState(menuTabState);
     const [menuTab, setMenuTab] = useRecoilState(menuTabState)
-    console.log(menuTab);
     useEffect(() => {
         const tab = document.querySelectorAll('.tab-round, .tab-line');
         tab.forEach((el, idx) => {
@@ -27,7 +25,6 @@ function Tab({list, addClass, active= 0, link= [], listClass = []}){
         setMenuTab($li.classList[0]);
     }
     return (
-        // className={(idx === active) ? 'active' : ''}
         <ul className={addClass ? `tab${addClass}` : 'tab'}>
             {list.map((item, idx) =>
                 <li key={idx} className={listClass ? listClass[idx] : ''} onClick={onClick}>

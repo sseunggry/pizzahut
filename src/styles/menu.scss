@@ -185,7 +185,7 @@
 /* set */
 .menu-set{
   .thumb-list{
-    padding-top: 8.33vw;
+    padding: 8.33vw 0;
 
     li {
       + li {
@@ -289,7 +289,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 5vw 11.11vw;
-    padding-top: 8.33vw;
+    padding: 8.33vw 0;
 
     li a{
       flex-direction: column;
