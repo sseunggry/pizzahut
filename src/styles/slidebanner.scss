@@ -1,0 +1,71 @@
+.swiper{
+  &.main-slider{
+    position: relative;
+    margin: 13.89vw 0 8.33vw;
+
+    border-radius: 20px;
+
+    .txt-con{
+      position: absolute;
+      top: 50%;
+      left: 8.33vw;
+      transform: translateY(-50%);
+      width: 50%;
+      z-index: 2;
+
+      .tit{
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.3;
+      }
+
+      .desc{
+        margin-bottom: 1.39vw;
+        max-height: 11.67vw;
+        opacity: 0.5;
+        line-height: 1.5;
+        font-size: 20px;
+        color: #000;
+      }
+    }
+
+    .img-con{
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 52.78vw;
+      border-radius: 4.17vw;
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &-pagination-bullet {
+    width: 1.67vw;
+    height: 1.67vw;
+  }
+
+  &-pagination-bullet-active {
+    width: 5.56vw;
+    height: 1.67vw;
+    border-radius: 1.67vw;
+    background: #41b6e5;
+  }
+
+  &-container-horizontal {
+    > .swiper-pagination-bullets{
+      bottom: 2.78vw;
+
+      .swiper-pagination-bullet {
+        margin: 0 0.83vw;
+      }
+    }
+  }
+}

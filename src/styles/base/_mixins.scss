@@ -1,0 +1,5 @@
+@charset "UTF-8";
+
+@mixin bg($url, $pos:center, $size:cover){
+  background: url('../../public/resource/img/'+ $url) no-repeat $pos / $size;
+}

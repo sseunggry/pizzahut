@@ -1,0 +1,30 @@
+.wrap {
+  position: relative;
+  overflow: hidden;
+  padding: 16.67vw 0;
+  height: 100vh;
+}
+
+section + section {
+  padding-top: 13.89vw;
+}
+
+.container {
+  overflow: hidden auto;
+  padding-bottom: 8.33vw;
+  height: calc(100vh - 33.34vw);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  > section:last-child {
+    margin-bottom: 8.33vw;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.inner {
+  padding: 0 5.56vw;
+}
