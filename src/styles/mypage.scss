@@ -1,0 +1,28 @@
+@import "./base/variables";
+
+.login-info{
+    margin-left: -5.56vw;
+    padding: 11.12vw 5.56vw;
+    width: calc(100% + 11.12vw);
+    background-color: $c-blue;
+
+    .title{
+        margin-bottom: 5.56vw;
+        color: $c-indigo;
+        font-size: 7.22vw;
+        font-weight: 100;
+        line-height: 1.3;
+        text-align: center;
+    }
+
+    .btn-wrap{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4.44vw;
+    }
+}
+
+.cart{
+    padding: 11.11vw 0;
+    
+}

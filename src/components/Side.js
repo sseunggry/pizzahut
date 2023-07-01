@@ -11,13 +11,13 @@ function Side() {
     return (
         <div className="menu-side">
             <ul className="thumb-list">
-            {side.map(({discount, name, originPrice, img}, idx) =>
+            {side.map(({discount, name, originPrice, thumbImg}, idx) =>
                 <li key={idx}>
                     <Link to="">
                         <div className="thumb-img">
                             {discount && <span className={`flag discount`}>{discount}%</span>}
                             <div className="img-con">
-                                <img src={`${contentImg}/${img}`} alt={name}/>
+                                <img src={`${contentImg}/${thumbImg}`} alt={name}/>
                             </div>
                         </div>
                         <dl className="thumb-txt">

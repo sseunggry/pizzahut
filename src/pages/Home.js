@@ -4,7 +4,7 @@ import MainOrder from "../components/MainOrder";
 import Tab from "../components/Tab";
 import SlideBanner from "../components/SlideBanner";
 
-function Main(){
+function Home(){
     return(
         <Layout header={{title: '메뉴'}} bottomMenu >
             <Banner
@@ -38,4 +38,4 @@ function Main(){
     )
 }
 
-export default Main;
+export default Home;

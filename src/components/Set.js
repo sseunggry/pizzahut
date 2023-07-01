@@ -11,13 +11,13 @@ function Set() {
     return (
         <div className="menu-set">
             <ul className="thumb-list">
-                {set.map(({flag, name, price, img}, idx) =>
+                {set.map(({flag, name, price, thumbImg}, idx) =>
                     <li key={idx}>
                         <Link to="">
                             <div className="thumb-img">
                                 {flag && <span className={`flag ${flag}`}>{flag}</span>}
                                 <div className="img-con">
-                                    <img src={`${contentImg}/${img}`} alt={name}/>
+                                    <img src={`${contentImg}/${thumbImg}`} alt={name}/>
                                 </div>
                             </div>
                             <dl className="thumb-txt">

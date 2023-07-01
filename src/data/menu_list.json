@@ -3,11 +3,16 @@
         {
             "flag": "best",
             "name": "쉬반단반 피자",
+            "desc": "쉬림프와 핫치킨, 단호박을 한판으로!",
             "price": {
                 "mediumOrigin": 29900,
                 "largeOrigin": 35900
             },
-            "img": "pizza_thumb_01.png"
+            "id": "shivanDanban",
+            "thumbImg": "pizza_thumb_01.png",
+            "fullImg1": "pizza_full_01_01.png",
+            "fullImg2": "pizza_full_01_02.png",
+            "fullImg3": "pizza_full_01_03.png"
         },
         {
             "flag": "best",
@@ -15,7 +20,8 @@
             "price": {
                 "largeOrigin": 35900
             },
-            "img": "pizza_thumb_02.png"
+            "id": "hotdog",
+            "thumbImg": "pizza_thumb_02.png"
         },
         {
             "name": "목동 피자",
@@ -23,7 +29,8 @@
                 "mediumOrigin": 29900,
                 "largeOrigin": 35900
             },
-            "img": "pizza_thumb_03.png"
+            "id": "mockdong",
+            "thumbImg": "pizza_thumb_03.png"
         },
         {
             "flag": "new",
@@ -32,7 +39,8 @@
                 "mediumOrigin": 23200,
                 "largeOrigin": 28900
             },
-            "img": "pizza_thumb_04.png"
+            "id": "pumpkin",
+            "thumbImg": "pizza_thumb_04.png"
         },
         {
             "flag": "best",
@@ -40,7 +48,8 @@
             "price": {
                 "largeOrigin": 25300
             },
-            "img": "pizza_thumb_05.png"
+            "id": "combination",
+            "thumbImg": "pizza_thumb_05.png"
         },
         {
             "flag": "new",
@@ -49,7 +58,8 @@
                 "mediumOrigin": 28900,
                 "largeOrigin": 30400
             },
-            "img": "pizza_thumb_06.png"
+            "id": "laughter",
+            "thumbImg": "pizza_thumb_06.png"
         }
     ],
     "setList": [
@@ -60,7 +70,7 @@
                 "mediumOrigin": 32500,
                 "largeOrigin": 37500
             },
-            "img": "set_thumb_01.png"
+            "thumbImg": "set_thumb_01.png"
         },
         {
             "flag": "best",
@@ -69,7 +79,7 @@
                 "mediumOrigin": 30500,
                 "largeOrigin": 34500
             },
-            "img": "set_thumb_02.png"
+            "thumbImg": "set_thumb_02.png"
         },
         {
             "flag": "new",
@@ -78,7 +88,7 @@
                 "mediumOrigin": 27500,
                 "largeOrigin": 31500
             },
-            "img": "set_thumb_03.png"
+            "thumbImg": "set_thumb_03.png"
         },
         {
             "flag": "best",
@@ -87,7 +97,7 @@
                 "mediumOrigin": 25500,
                 "largeOrigin": 29500
             },
-            "img": "set_thumb_04.png"
+            "thumbImg": "set_thumb_04.png"
         },
         {
             "flag": "new",
@@ -96,7 +106,7 @@
                 "mediumOrigin": 23500,
                 "largeOrigin": 26500
             },
-            "img": "set_thumb_05.png"
+            "thumbImg": "set_thumb_05.png"
         }
     ],
     "sideList": [
@@ -104,34 +114,34 @@
             "discount": 50,
             "name": "상하이 쉬림프 파스타",
             "originPrice": 9800,
-            "img": "side_thumb_01.png"
+            "thumbImg": "side_thumb_01.png"
         },
         {
             "discount": 50,
             "name": "크림 치킨 파스타",
             "originPrice": 9800,
-            "img": "side_thumb_02.png"
+            "thumbImg": "side_thumb_02.png"
         },
         {
             "name": "팝콘 치킨(20ea)",
             "originPrice": 5800,
-            "img": "side_thumb_03.png"
+            "thumbImg": "side_thumb_03.png"
         },
         {
             "name": "고르곤졸라 치즈볼",
             "originPrice": 5800,
-            "img": "side_thumb_04.png"
+            "thumbImg": "side_thumb_04.png"
         },
         {
             "discount": 30,
             "name": "대만 연유 치즈볼",
             "originPrice": 4800,
-            "img": "side_thumb_05.png"
+            "thumbImg": "side_thumb_05.png"
         },
         {
             "name": "순살 허브치킨(8조각)",
             "originPrice": 9900,
-            "img": "side_thumb_06.png"
+            "thumbImg": "side_thumb_06.png"
         }
     ]
 }

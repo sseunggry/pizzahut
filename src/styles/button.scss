@@ -1,0 +1,39 @@
+@import "./base/variables";
+
+.btn{
+    button, a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &-s{
+        height: 50px;
+        font-size: 20px;
+    }
+
+    &-m{
+        height: 13.89vw;
+        font-size: 4.44vw;
+        border-radius: 8.44vw;
+    }
+
+    &.bg-white{
+        color: $c-white;
+        background-color: $c-blue;
+    }
+
+    &.primary{
+        color: $c-white;
+        background-color: $c-blue;
+    }
+
+    &.sub-primary{
+        color: $c-blue;
+        background-color: $c-white;
+    }
+
+}
