@@ -23,3 +23,16 @@ img{
 .bold{
   font-weight: 700;
 }
+
+/* blind */
+.blind {
+  display: none;
+  overflow: hidden;
+  border: 0;
+  position: relative;
+  z-index: -1;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+}

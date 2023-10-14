@@ -1,0 +1,11 @@
+@import "./base/mixins";
+
+.inp-radio{
+    input{
+        @include blind;
+    }
+
+    .inp-label{
+        display: block;
+    }
+}

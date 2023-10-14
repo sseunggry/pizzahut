@@ -1,0 +1,242 @@
+@import "./base/mixins";
+
+.notice-txt{
+	margin-top: 6.94vw;
+    font-size: 3.33vw;
+    color: #999;
+
+	&::before{
+		content: '※'; 
+		margin-right: 1.11vw;
+	}
+}
+
+.menu-detail {
+	padding-top: 6.94vw;
+
+	.detail-info{
+		.tit-con {
+			margin-bottom: 5.56vw;
+			h3 {
+				font-size: 7.22vw;
+				font-weight: 100;
+			}
+			p {
+				margin-top: 2.78vw;
+				font-size: 3.33vw;
+				font-weight: 500;
+			}
+		}
+		.img-con {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			width: 83.33vw;
+			height: 83.33vw;
+			background: #f8f8f8;
+			border-radius: 50%;
+	
+			img {
+				width: 90%;
+			}
+		}
+	}
+}
+.select-con {
+	padding-top: 13.89vw;
+	
+	h4 {
+		margin-bottom: 4.17vw;
+		font-size: 5.00vw;
+		font-weight: 700;
+	}
+	&.edge {
+		.edge-list {
+			display: flex;
+
+			.inp-radio{
+				flex: 1;
+
+				:checked ~ .inp-label{
+					img {
+						width: 25.00vw;
+						height: 25.00vw;
+						transition: 0.5s;
+					}
+
+					span {
+						font-weight: 700;
+					}
+				}
+
+				.inp-label{
+					display: flex;
+					flex-direction: column;
+					img{
+						margin: 0 auto;
+						width: 20.83vw;
+						height: 20.83vw;
+					}
+					span{
+						margin-top: 1.39vw;
+						font-size: 3.89vw;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+	&.size {
+		.sizeBox {
+			display: flex;
+			align-items: center;
+			padding: 0 8.33vw;
+			width: 100%;
+			height: 13.89vw;
+			background: #f8f8f8;
+			border-radius: 1.39vw;
+			color: #222;
+			& + .sizeBox {
+				margin-top: 1.67vw;
+			}
+			.price {
+				margin-left: auto;
+				.sale {
+					margin-right: 2.78vw;
+					font-size: 3.89vw;
+					font-weight: 500;
+				}
+				.origin {
+					position: relative;
+					padding: 0 0.42vw;
+					font-size: 3.33vw;
+					font-weight: 300;
+					color: #bbb;
+					&::after {
+						content: '';
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						display: block;
+						width: 100%;
+						height: 0.14vw;
+						background: #bbb;
+					}
+				}
+			}
+			&.active {
+				background: #41b6e5;
+				color: #fff;
+				.price {
+					.origin {
+						color: rgba(255, 255, 255, 0.7);
+						&::after {
+							background: rgba(255, 255, 255, 0.7);
+						}
+					}
+				}
+			}
+		}
+	}
+	&.topping {
+		margin-left: 8.33vw;
+		.toppingList {
+			overflow-x: scroll;
+			display: flex;
+			flex-wrap: nowrap;
+			text-align: center;
+			li {
+				margin-bottom: 2.78vw;
+				flex: 1 0 28%;
+				.imgWrap {
+					margin: 0 auto;
+					width: 13.89vw;
+					height: 13.89vw;
+					img {
+						width: 100%;
+					}
+				}
+				.txtWrap {
+					p {
+						margin: 2.78vw 0 1.39vw;
+						font-size: 3.33vw;
+						font-weight: 300;
+					}
+					.price {
+						font-size: 3.89vw;
+						font-weight: 700;
+					}
+				}
+				.check {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin: 2.78vw auto 0;
+					width: 5.56vw;
+					height: 5.56vw;
+					background: #ddd;
+					border-radius: 50%;
+					transition: 0.2s;
+					&::after {
+						content: '';
+						display: block;
+						width: 3.33vw;
+						height: 3.33vw;
+                        @include bg('/common/ico_check.png');
+					}
+				}
+				&.active {
+					.check {
+						background: #41b6e5;
+					}
+				}
+			}
+		}
+	}
+	&.count {
+		.btn_orderCount {
+			display: flex;
+			align-items: center;
+			padding: 0 5.56vw;
+			width: 100%;
+			height: 13.89vw;
+			border: 0.28vw solid #bbb;
+			border-radius: 6.94vw;
+			button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 11.11vw;
+				height: 13.89vw;
+				&::after {
+					content: '';
+					display: block;
+					width: 4.17vw;
+					height: 4.17vw;
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+				}
+				&.minus {
+					&::after {
+						background-image: url('../../public/resource/img/common/ico_minus1.png');
+					}
+				}
+				&.plus {
+					&::after {
+						background-image: url('../../public/resource/img/common/ico_plus1.png');
+					}
+				}
+			}
+			.count {
+				margin: 0 auto;
+				font-size: 3.89vw;
+			}
+		}
+		.guide {
+			margin-top: 2.78vw;
+		}
+	}
+}
