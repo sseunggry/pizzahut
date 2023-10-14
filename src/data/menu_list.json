@@ -4,6 +4,8 @@
             "flag": "best",
             "name": "쉬반단반 피자",
             "desc": "쉬림프와 핫치킨, 단호박을 한판으로!",
+            "priceMedium": 29900,
+            "priceLarge": 35900,
             "price": {
                 "mediumOrigin": 29900,
                 "largeOrigin": 35900
