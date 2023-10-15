@@ -6,6 +6,42 @@
     }
 
     .inp-label{
-        display: block;
+        display: flex;
+    }
+}
+
+.inp-checkbox{
+    input{
+        @include blind;
+    }
+
+    .inp-label{
+        display: flex;
+
+        .icon-check{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2.78vw auto 0;
+            width: 5.56vw;
+            height: 5.56vw;
+            background: #ddd;
+            border-radius: 50%;
+            transition: 0.2s;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 3.33vw;
+                height: 3.33vw;
+                @include bg('/common/ico_check.png');
+            }
+        }
+    }
+
+    :checked ~ .inp-label{
+        .icon-check{
+            background: #41b6e5;
+        }
     }
 }

@@ -1,7 +1,5 @@
 import {Link} from "react-router-dom";
-import {contentImg} from "../recoil/atoms";
-
-import menuListData from "../data/menu_list.json";
+import {menuListData, contentImg} from "../recoil/atoms";
 
 function Pizza(){
     const pizza = menuListData.pizzaList;
@@ -11,7 +9,7 @@ function Pizza(){
     return (
         <div className="menu-pizza">
             <ul className="thumb-list">
-                {pizza.map(({flag, name, price, thumbImg, id}, idx) =>
+                {pizza.map(({flag, name, priceMedium, priceLarge, thumbImg, id}, idx) =>
                     <li key={idx}>
                         <Link to={`/menu/${id}`}>
                             <div className="thumb-img">
@@ -23,18 +21,18 @@ function Pizza(){
                             <dl className="thumb-txt">
                                 <dt>{name}</dt>
                                 <dd className="price">
-                                    {price.mediumOrigin && (
+                                    {priceMedium && (
                                         <p className="list">
                                             <span className="size">M</span>
-                                            <span className="sale-price">{priceDot(Math.ceil(price.mediumOrigin * 0.8))}원</span>
-                                            <span className="origin-price">{priceDot(price.mediumOrigin)}원</span>
+                                            <span className="sale-price">{priceDot(Math.ceil(priceMedium * 0.8))}원</span>
+                                            <span className="origin-price">{priceDot(priceMedium)}원</span>
                                         </p>
                                     )}
-                                    {price.largeOrigin && (
+                                    {priceLarge && (
                                         <p className="list">
                                             <span className="size">L</span>
-                                            <span className="sale-price">{priceDot(Math.ceil(price.largeOrigin * 0.8))}원</span>
-                                            <span className="origin-price">{priceDot(price.largeOrigin)}원</span>
+                                            <span className="sale-price">{priceDot(Math.ceil(priceLarge * 0.8))}원</span>
+                                            <span className="origin-price">{priceDot(priceLarge)}원</span>
                                         </p>
                                     )}
                                 </dd>

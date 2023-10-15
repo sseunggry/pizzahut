@@ -1,7 +1,5 @@
 import {Link} from "react-router-dom";
-import {contentImg} from "../recoil/atoms";
-
-import menuListData from "../data/menu_list.json";
+import {menuListData, contentImg} from "../recoil/atoms";
 
 function Set() {
     const set = menuListData.setList;
@@ -11,7 +9,7 @@ function Set() {
     return (
         <div className="menu-set">
             <ul className="thumb-list">
-                {set.map(({flag, name, price, thumbImg}, idx) =>
+                {set.map(({flag, name, priceMedium, priceLarge, thumbImg}, idx) =>
                     <li key={idx}>
                         <Link to="">
                             <div className="thumb-img">
@@ -30,16 +28,16 @@ function Set() {
                                     <span>음료</span>
                                 </dd>
                                 <dd className="price">
-                                    {price.mediumOrigin ? (
+                                    {priceMedium ? (
                                         <p className="list">
                                             <span className="size">M</span>
-                                            <span className="origin-price">{priceDot(price.mediumOrigin)}원</span>
+                                            <span className="origin-price">{priceDot(priceMedium)}원</span>
                                         </p>
                                     ) : null}
-                                    {price.largeOrigin ? (
+                                    {priceLarge ? (
                                         <p className="list">
                                             <span className="size">L</span>
-                                            <span className="origin-price">{priceDot(price.largeOrigin)}원</span>
+                                            <span className="origin-price">{priceDot(priceLarge)}원</span>
                                         </p>
                                     ) : null}
                                 </dd>

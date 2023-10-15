@@ -1,7 +1,5 @@
 import {Link} from "react-router-dom";
-import {contentImg} from "../recoil/atoms";
-
-import menuListData from "../data/menu_list.json";
+import {menuListData, contentImg} from "../recoil/atoms";
 
 function Side() {
     const side = menuListData.sideList;
@@ -11,7 +9,7 @@ function Side() {
     return (
         <div className="menu-side">
             <ul className="thumb-list">
-            {side.map(({discount, name, originPrice, thumbImg}, idx) =>
+            {side.map(({discount, name, priceOrigin, thumbImg}, idx) =>
                 <li key={idx}>
                     <Link to="">
                         <div className="thumb-img">
@@ -23,10 +21,10 @@ function Side() {
                         <dl className="thumb-txt">
                             <dt>{name}</dt>
                             <dd className="price">
-                                <span className={discount ? 'origin-price' : 'origin-price large'}>{priceDot(originPrice)}원</span>
+                                <span className={discount ? 'origin-price' : 'origin-price large'}>{priceDot(priceOrigin)}원</span>
                                 {discount && (
                                     <span className="sale-price">
-                                        {priceDot(Math.ceil(originPrice*(1-discount/100)))+'원'}
+                                        {priceDot(Math.ceil(priceOrigin*(1-discount/100)))+'원'}
                                     </span>
                                 )}
                             </dd>

@@ -1,6 +1,6 @@
 import "../styles/input.scss";
 
-function RadioGroup({ addClass, legend, children}){    
+function InputGroup({ addClass, legend, children}){
     return (
         <fieldset className={addClass}>
             <legend>{legend}</legend>
@@ -9,4 +9,4 @@ function RadioGroup({ addClass, legend, children}){
     )
 }
 
-export default RadioGroup;
+export default InputGroup;

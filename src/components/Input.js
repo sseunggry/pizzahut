@@ -1,6 +1,6 @@
 import "../styles/input.scss";
 
-function Radio({ type, name, id, value, defaultChecked, disabled, onChange, children}){    
+function Input({ type, name, id, value, defaultChecked, disabled, onChange, children}){
     return (
         <div className={`inp-${type}`}>
             <input 
@@ -19,4 +19,4 @@ function Radio({ type, name, id, value, defaultChecked, disabled, onChange, chil
     )
 }
 
-export default Radio;
+export default Input;

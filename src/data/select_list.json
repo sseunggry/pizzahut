@@ -1,0 +1,40 @@
+{
+    "edgeList" : ["리치골드", "치즈크러스트", "치즈그라탕"],
+    "toppingList" : [
+        {
+            "name" : "모짜렐라 치즈",
+            "price" : 2000,
+            "img" : "pizza_topping_01.png"
+        },
+        {
+            "name" : "청피망",
+            "price" : 1000,
+            "img" : "pizza_topping_02.png"
+        },
+        {
+            "name" : "킬바사 소세지",
+            "price" : 1500,
+            "img" : "pizza_topping_03.png"
+        },
+        {
+            "name" : "체다 치즈",
+            "price" : 1000,
+            "img" : "pizza_topping_04.png"
+        },
+        {
+            "name" : "통새우",
+            "price" : 3000,
+            "img" : "pizza_topping_05.png"
+        },
+        {
+            "name" : "파인애플",
+            "price" : 1000,
+            "img" : "pizza_topping_06.png"
+        },
+        {
+            "name" : "버거스테이크",
+            "price" : 1500,
+            "img" : "pizza_topping_07.png"
+        }
+    ]
+}
