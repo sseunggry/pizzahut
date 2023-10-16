@@ -36,3 +36,8 @@ export const menuTabState = atom({
     key: "menuTabState",
     default: "pizza"
 })
+
+export const selectDataState = atom({
+    key: "selectDataState",
+    default: []
+})

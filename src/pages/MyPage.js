@@ -3,8 +3,14 @@ import Button from "../components/Button";
 
 import "../styles/mypage.scss";
 import Tab from "../components/Tab";
+import {useRecoilState} from "recoil";
+import {contentImg, selectDataState} from "../recoil/atoms";
 
 function MyPage() {
+    const [selectData, setSelectData] = useRecoilState(selectDataState);
+    // const {thumbImg, name, edge, size, topping, count} = selectData;
+    console.log(selectData);
+
     return (
         <Layout header={{title: "마이"}}>
             <div className="login-info">
@@ -20,8 +26,38 @@ function MyPage() {
                 </div>
             </div>
             
-            <div className="cart">
+            <div className="cart-info">
                 <Tab addClass="-round" list={["배달", "포장"]} />
+                <ul className="cart-list">
+                    {selectData.map(({thumbImg, name, edge, size, topping, count}, idx) => (
+                        <li key={idx}>
+                            <img src={`${contentImg}/${thumbImg}`} alt="" />
+                            <div className="txt-con">
+                                <p>{name}<span className="c-red">({size})</span></p>
+                                <dl>
+                                    <dt>엣지</dt>
+                                    <dd>{edge} 엣지</dd>
+                                </dl>
+                                <dl>
+                                    <dt>토핑</dt>
+                                    <dd>
+                                        {topping.join(', ')}
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>수량</dt>
+                                    <dd>{count}</dd>
+                                </dl>
+                            </div>
+                            <button className="delete"></button>
+                            <div className="price-con">
+                                <span className="origin_price">38,900원</span>
+                                <span className="sale_percent c-red">30%</span>
+                                <span className="price">28,130원</span>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
             </div>
 
         </Layout>

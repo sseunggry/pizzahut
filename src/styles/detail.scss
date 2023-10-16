@@ -12,7 +12,7 @@
 }
 
 .menu-detail {
-	padding-top: 6.94vw;
+	padding: 6.94vw 0;
 
 	.detail-info{
 		.tit-con {
@@ -42,16 +42,18 @@
 			}
 		}
 	}
-}
-.select-con {
-	padding-top: 13.89vw;
-	
-	h4 {
-		margin-bottom: 4.17vw;
-		font-size: 5.00vw;
-		font-weight: 700;
-	}
-	&.edge {
+	.select-con {
+		padding-top: 13.89vw;
+
+		> dl + dl{
+			margin-top: 13.89vw;
+		}
+
+		dt{
+			margin-bottom: 4.17vw;
+			font-size: 5.00vw;
+			font-weight: 700;
+		}
 		.edge-list {
 			display: flex;
 
@@ -85,8 +87,6 @@
 				}
 			}
 		}
-	}
-	&.size {
 		.size-list{
 			.inp-radio{
 				flex: 1;
@@ -149,8 +149,6 @@
 				}
 			}
 		}
-	}
-	&.topping {
 		.topping-list {
 			overflow-x: scroll;
 			display: flex;
@@ -180,9 +178,7 @@
 				}
 			}
 		}
-	}
-	&.count {
-		.btn_count {
+		.btn-count {
 			display: flex;
 			align-items: center;
 			padding: 0 5.56vw;
@@ -221,10 +217,15 @@
 			.count {
 				margin: 0 auto;
 				font-size: 3.89vw;
+				text-align: center;
+			}
+
+			~ .notice-txt {
+				margin-top: 2.78vw;
 			}
 		}
-		.notice-txt {
-			margin-top: 2.78vw;
-		}
+	}
+	.btn-cart{
+		margin-top: 40px;
 	}
 }

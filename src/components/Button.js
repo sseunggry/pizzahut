@@ -1,12 +1,12 @@
 import {Link} from "react-router-dom";
 import "../styles/button.scss";
 
-function Button({tag = 'a', type, text, size, link = '' , addClass= ''}){
+function Button({tag = 'a', type, text, size, link = '' , addClass= '', onClick}){
     let btnCont;
     if(tag === 'button') {
-        btnCont = <button type="button">{text}</button>;
+        btnCont = <button type="button" onClick={onClick}>{text}</button>;
     } else {
-        btnCont = <Link to={link}>{text}</Link>;
+        btnCont = <Link to={link} onClick={onClick}>{text}</Link>;
     }
     
     return (
