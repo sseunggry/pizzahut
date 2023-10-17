@@ -6,7 +6,7 @@ import SlideBanner from "../components/SlideBanner";
 
 function Home(){
     return(
-        <Layout header={{title: '메뉴'}} bottomMenu >
+        <Layout header={{address: '서울특별시 강남구 테헤란로'}} >
             <Banner
                 text='배달도 포장도'
                 point='50% 반값 할인!'

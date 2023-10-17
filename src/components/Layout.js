@@ -9,6 +9,7 @@ function Layout({header, bottomMenu = true, footer, children}){
             {header && (
                 <Header
                     title={header.title}
+                    address={header.address}
                     backBtn={header.backBtn}
                 />
             )}

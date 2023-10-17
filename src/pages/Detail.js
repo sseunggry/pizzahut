@@ -160,7 +160,6 @@ function Detail(){
                     </dl>
                 </div>
                 <Button text="장바구니 담기" size="m" type="primary" addClass="btn-cart" onClick={onClick}/>
-                {/*<p>{inputValue.edge} {inputValue.size} {inputValue.topping}</p>*/}
             </div>
         </Layout>
     )

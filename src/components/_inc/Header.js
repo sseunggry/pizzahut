@@ -12,11 +12,11 @@ function Logo(){
     )
 }
 
-function Header({backBtn, title}){
+function Header({backBtn, title, address}){
     return (
         <header className="header">
             {backBtn ?  <Link className="btn-back"><img src={`${commonImg}/ico_back.png`} alt="" /></Link> :  <Logo />}
-            {title ? <h2 className="head-tit">{title}</h2> : ''}
+            {title ? <h2 className="head-tit">{title}</h2> : address ? <Link to="/address" className="btn-address">{address}</Link> : ''}
             <Link className="btn-cart">
                 <img src={`${commonImg}/ico_cart.png`} alt="cart" />
             </Link>

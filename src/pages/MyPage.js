@@ -9,10 +9,22 @@ import {contentImg, selectDataState} from "../recoil/atoms";
 function MyPage() {
     const [selectData, setSelectData] = useRecoilState(selectDataState);
     // const {thumbImg, name, edge, size, topping, count} = selectData;
+
+    const deleteClick = (e) => {
+        const $el = e.target;
+        const listLi = $el.parentNode;
+        const lists = listLi.parentNode.children;
+
+        const index = Array.from(lists).indexOf(listLi);
+        const newSelectData = selectData.filter((data) => (
+            data !== selectData[index]
+        ))
+        setSelectData(newSelectData);
+    }
     console.log(selectData);
 
     return (
-        <Layout header={{title: "마이"}}>
+        <Layout header={{title: "마이페이지"}}>
             <div className="login-info">
                 <h2 className="title">
                     피자알볼로의 <br/>
@@ -33,7 +45,11 @@ function MyPage() {
                         <li key={idx}>
                             <img src={`${contentImg}/${thumbImg}`} alt="" />
                             <div className="txt-con">
-                                <p>{name}<span className="c-red">({size})</span></p>
+                                <p>
+                                    {name}
+                                    <span className="c-red">({size})</span>
+                                    <span className="count c-red">{count}개</span>
+                                </p>
                                 <dl>
                                     <dt>엣지</dt>
                                     <dd>{edge} 엣지</dd>
@@ -49,7 +65,7 @@ function MyPage() {
                                     <dd>{count}</dd>
                                 </dl>
                             </div>
-                            <button className="delete"></button>
+                            <button className="btn-delete" onClick={deleteClick}></button>
                             <div className="price-con">
                                 <span className="origin_price">38,900원</span>
                                 <span className="sale_percent c-red">30%</span>

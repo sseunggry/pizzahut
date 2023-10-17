@@ -59,6 +59,12 @@
         padding: 5.56vw;
         border-radius: 4.17vw;
         box-shadow: 0 0 0.56vw rgba(0, 0, 0, 0.15);
+        opacity: 1;
+        transition: all 0.3s;
+
+        &.remove{
+            opacity: 0;
+        }
     }
 
     img {
@@ -78,6 +84,10 @@
             padding: 1.39vw 0;
             font-size: 4.44vw;
             font-weight: 500;
+
+            .count{
+                margin-left: 1.39vw;
+            }
         }
 
         dl {
@@ -103,7 +113,7 @@
         }
     }
 
-    button.delete {
+    .btn-delete {
         position: absolute;
         top: 5.56vw;
         right: 5.56vw;

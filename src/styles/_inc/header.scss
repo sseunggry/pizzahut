@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 40px;
+  //padding: 0 5.56vw;
   width: 100%;
   height: 16.67vw;
   background: #fff;
@@ -19,13 +19,42 @@
   }
 
   a{
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    width: 8.33vw;
-    height: 8.33vw;
+    width: 16.67vw;
+    height: 16.67vw;
 
     img {
-      width: 100%;
+      width: 8.33vw;
+      object-fit: contain;
+    }
+  }
+
+  .btn-back{
+    img{
+      width: 4.2vw;
+    }
+  }
+
+  .btn-address{
+    flex-shrink: 1;
+    width: 100%;
+    height: auto;
+    font-size: 3.89vw;
+    text-align: center;
+
+    &::after{
+      content: '';
+      display: inline-block;
+      margin-bottom: 0.56vw;
+      margin-left: 1.11vw;
+      width: 2.78vw;
+      height: 1.81vw;
+      background: url('../../../public/resource/img/common/ico_arrow_down.png') no-repeat center/contain;
+      vertical-align: middle;
+      //@include bg('common/ico_arrow_down.png');
     }
   }
 

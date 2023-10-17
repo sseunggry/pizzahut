@@ -1,8 +1,10 @@
 .tab{
   &-round{
     display: flex;
+    align-items: center;
+    //height: 13.89vw;
     background-color: #f8f8f8;
-    border-radius: 80px;
+    border-radius: 6.94vw;
 
     li{
       width: 100%;
@@ -10,13 +12,13 @@
       a{
         display: inline-block;
         width: 100%;
-        height: 60px;
-        line-height: 60px;
-        font-size: 24px;
+        height: 13.89vw;
+        line-height: 13.89vw;
+        font-size: 4.44vw;
         color: #999;
         text-align: center;
         background: #f8f8f8;
-        border-radius: 80px;
+        border-radius: 6.94vw;
       }
 
       &.active{
@@ -29,8 +31,8 @@
   }
 
   &-line{
-    margin-left: -40px;
-    width: calc(100% + 80px);
+    margin-left: -5.56vw;
+    width: calc(100% + 11.11vw);
     height: 13.89vw;
     border-bottom: 0.56vw solid #ddd;
     background: #fff;

@@ -5,6 +5,7 @@ import Menu from "./pages/Menu";
 import MyPage from "./pages/MyPage";
 import Event from "./pages/Event";
 import Detail from "./pages/Detail";
+import Address from "./pages/Address";
 import "./styles/base/_index.scss";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                   <Route path="/myPage" element={<MyPage />} />
                   <Route path="/event" element={<Event />} />
                   <Route path="/menu/:id" element={<Detail />} />
+                  <Route path="/address" element={<Address />} />
               </Routes>
           </Router>
       </RecoilRoot>

@@ -1,6 +1,11 @@
 @import "./base/mixins";
 
 /* thumb-list common */
+.tab-line{
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
 .thumb-list {
   li a {
     position: relative;
@@ -40,7 +45,6 @@
       text-transform: uppercase;
       letter-spacing: 0.07vw;
       border-radius: 6.94vw;
-      z-index: 1;
 
       &.best {
         background: #41b6e5;
@@ -86,18 +90,8 @@
           font-size: 2.78vw;
           font-weight: 700;
           color: #41b6e5;
-          z-index: 3;
-
-          &::before {
-            content: '';
-            position: absolute;
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #e1f0f8;
-            z-index: -1;
-          }
+          background-color: #e1f0f8;
+          border-radius: 50%;
         }
       }
 
@@ -106,8 +100,8 @@
       }
 
       .sale-price {
-        font-size: 4.44vw;
-        font-weight: 500;
+        font-size: 4.00vw;
+        font-weight: 700;
       }
       .origin-price {
         position: relative;
@@ -115,7 +109,6 @@
         margin-left: 2.78vw;
         padding: 0 0.42vw;
         font-size: 3.33vw;
-        font-weight: 400;
         color: #bbb;
 
         &::after {
@@ -224,10 +217,7 @@
       .price {
         .size {
           color: #fff;
-
-          &::before {
-            background: #41b6e5;
-          }
+          background: #41b6e5;
         }
 
         .origin-price {
@@ -333,9 +323,10 @@
         margin-right: 2.78vw;
 
         &.large{
+          margin-right: 0;
           color: #222;
-          font-size: 4.44vw;
-          font-weight: 500;
+          font-size: 4.00vw;
+          font-weight: 700;
 
           &::after{
             display: none;
@@ -350,22 +341,23 @@
 .btn-count {
   display: flex;
   align-items: center;
-  padding: 0 5.56vw;
+  justify-content: space-between;
+  padding: 0 2.56vw;
+  margin-top: 5.56vw;
   width: 100%;
   height: 13.89vw;
   border: 0.28vw solid #bbb;
   border-radius: 6.94vw;
 
   button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 11.11vw;
-    height: 13.89vw;
+    height: 100%;
+    flex-shrink: 0;
 
     &::after {
       content: '';
       display: block;
+      margin: 0 auto;
       width: 4.17vw;
       height: 4.17vw;
     }
@@ -380,7 +372,8 @@
   }
 
   .count {
-    margin: 0 auto;
+    width: 100%;
     font-size: 3.89vw;
+    text-align: center;
   }
 }
