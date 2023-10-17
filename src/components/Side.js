@@ -7,6 +7,22 @@ function Side() {
     const priceDot = (price) => {
         return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     }
+    const btnMinusClick = (e) => {
+        const btnCount = e.target.parentNode;
+        const inputCount = btnCount.querySelector('.count');
+        let inputValue = Number(inputCount.value);
+
+        if(inputValue > 0){
+            inputCount.value = inputValue - 1;
+        }
+    }
+    const btnPlusClick = (e) => {
+        const btnCount = e.target.parentNode;
+        const inputCount = btnCount.querySelector('.count');
+        let inputValue = Number(inputCount.value);
+
+        inputCount.value = inputValue + 1;
+    }
     return (
         <div className="menu-side">
             <ul className="thumb-list">
@@ -30,9 +46,9 @@ function Side() {
                         </dd>
                     </dl>
                     <div className="btn-count">
-                        <button className="minus"></button>
-                        <input type="text" name="count" disabled className="count" />
-                        <button className="plus"></button>
+                        <button className="minus" onClick={btnMinusClick}></button>
+                        <input type="text" value="0" name="count" disabled className="count" />
+                        <button className="plus" onClick={btnPlusClick}></button>
                     </div>
                 </li>
             )}
