@@ -5,14 +5,15 @@ import "../styles/mypage.scss";
 import Tab from "../components/Tab";
 import {useRecoilState} from "recoil";
 import {contentImg, selectDataState} from "../recoil/atoms";
+import {priceDot} from "../js/commonFn";
 
 function MyPage() {
     const [selectData, setSelectData] = useRecoilState(selectDataState);
     // const {thumbImg, name, edge, size, topping, count} = selectData;
 
     const deleteClick = (e) => {
-        const $el = e.target;
-        const listLi = $el.parentNode;
+        const target = e.target;
+        const listLi = target.parentNode;
         const lists = listLi.parentNode.children;
 
         const index = Array.from(lists).indexOf(listLi);
@@ -21,7 +22,6 @@ function MyPage() {
         ))
         setSelectData(newSelectData);
     }
-    console.log(selectData);
 
     return (
         <Layout header={{title: "마이페이지"}}>
@@ -41,7 +41,7 @@ function MyPage() {
             <div className="cart-info">
                 <Tab addClass="-round" list={["배달", "포장"]} />
                 <ul className="cart-list">
-                    {selectData.map(({thumbImg, name, edge, size, topping, count}, idx) => (
+                    {selectData.map(({thumbImg, name, edge, size, topping, count, originPrice, sale, toppingPrice}, idx) => (
                         <li key={idx}>
                             <img src={`${contentImg}/${thumbImg}`} alt="" />
                             <div className="txt-con">
@@ -54,12 +54,14 @@ function MyPage() {
                                     <dt>엣지</dt>
                                     <dd>{edge} 엣지</dd>
                                 </dl>
-                                <dl>
-                                    <dt>토핑</dt>
-                                    <dd>
-                                        {topping.join(', ')}
-                                    </dd>
-                                </dl>
+                                {(topping.size === 0) ? '' : (
+                                    <dl>
+                                        <dt>토핑</dt>
+                                        <dd>
+                                            {topping.join(', ')}
+                                        </dd>
+                                    </dl>
+                                )}
                                 <dl>
                                     <dt>수량</dt>
                                     <dd>{count}</dd>
@@ -67,9 +69,9 @@ function MyPage() {
                             </div>
                             <button className="btn-delete" onClick={deleteClick}></button>
                             <div className="price-con">
-                                <span className="origin_price">38,900원</span>
-                                <span className="sale_percent c-red">30%</span>
-                                <span className="price">28,130원</span>
+                                <span className="origin_price">{priceDot(originPrice*count + toppingPrice)}원</span>
+                                <span className="sale_percent c-red">{sale}%</span>
+                                <span className="price">{priceDot(originPrice*((100-sale)/100)*count + toppingPrice)}원</span>
                             </div>
                         </li>
                     ))}

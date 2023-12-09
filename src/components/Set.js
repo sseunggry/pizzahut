@@ -1,11 +1,12 @@
 import {Link} from "react-router-dom";
 import {menuListData, contentImg} from "../recoil/atoms";
+import {priceDot} from "../js/commonFn";
 
 function Set() {
     const set = menuListData.setList;
-    const priceDot = (price) => {
-        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
+    // const priceDot = (price) => {
+    //     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    // }
     return (
         <div className="menu-set">
             <ul className="thumb-list">

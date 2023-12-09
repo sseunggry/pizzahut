@@ -1,12 +1,13 @@
 import {Link} from "react-router-dom";
 import {menuListData, contentImg} from "../recoil/atoms";
 import {useState} from "react";
+import {priceDot} from "../js/commonFn";
 
 function Side() {
     const side = menuListData.sideList;
-    const priceDot = (price) => {
-        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
+    // const priceDot = (price) => {
+    //     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    // }
     const btnMinusClick = (e) => {
         const btnCount = e.target.parentNode;
         const inputCount = btnCount.querySelector('.count');

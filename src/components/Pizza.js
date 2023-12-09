@@ -1,11 +1,13 @@
 import {Link} from "react-router-dom";
 import {menuListData, contentImg} from "../recoil/atoms";
+import {priceDot} from "../js/commonFn";
 
 function Pizza(){
     const pizza = menuListData.pizzaList;
-    const priceDot = (price) => {
-        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    }
+    const sale = 30;
+    // const priceDot = (price) => {
+    //     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    // }
     return (
         <div className="menu-pizza">
             <ul className="thumb-list">
@@ -24,14 +26,14 @@ function Pizza(){
                                     {priceMedium && (
                                         <p className="list">
                                             <span className="size">M</span>
-                                            <span className="sale-price">{priceDot(Math.ceil(priceMedium * 0.8))}원</span>
+                                            <span className="sale-price">{priceDot(priceMedium*((100-sale)/100))}원</span>
                                             <span className="origin-price">{priceDot(priceMedium)}원</span>
                                         </p>
                                     )}
                                     {priceLarge && (
                                         <p className="list">
                                             <span className="size">L</span>
-                                            <span className="sale-price">{priceDot(Math.ceil(priceLarge * 0.8))}원</span>
+                                            <span className="sale-price">{priceDot(priceLarge*((100-sale)/100))}원</span>
                                             <span className="origin-price">{priceDot(priceLarge)}원</span>
                                         </p>
                                     )}
