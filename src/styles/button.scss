@@ -35,5 +35,9 @@
         color: $c-blue;
         background-color: $c-white;
     }
+    &.line{
+        border: 0.28vw solid $c-blue;
+        color: $c-blue;
+    }
 
 }

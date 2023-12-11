@@ -9,7 +9,6 @@ import {priceDot} from "../js/commonFn";
 
 function MyPage() {
     const [selectData, setSelectData] = useRecoilState(selectDataState);
-    // const {thumbImg, name, edge, size, topping, count} = selectData;
 
     const deleteClick = (e) => {
         const target = e.target;

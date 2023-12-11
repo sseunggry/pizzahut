@@ -6,10 +6,6 @@ const contentImg = "/resource/img/contents";
 import {priceDot} from "../js/commonFn";
 
 function ThumbList({data}){
-    // console.log(data);
-    // const priceDot = (price) => {
-    //     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    // }
     return (
         <ul className="thumb-list">
             {data.map(({flag, name, price, img}, idx) =>

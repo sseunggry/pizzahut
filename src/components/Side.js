@@ -5,9 +5,6 @@ import {priceDot} from "../js/commonFn";
 
 function Side() {
     const side = menuListData.sideList;
-    // const priceDot = (price) => {
-    //     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    // }
     const btnMinusClick = (e) => {
         const btnCount = e.target.parentNode;
         const inputCount = btnCount.querySelector('.count');
