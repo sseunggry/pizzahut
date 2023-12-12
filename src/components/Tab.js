@@ -1,17 +1,20 @@
 import {useEffect} from "react";
 import {Link} from "react-router-dom";
 import {useRecoilState, useSetRecoilState} from "recoil";
-import {menuTabState} from "../recoil/atoms";
+import {eventTabState, menuTabState} from "../recoil/atoms";
 import '../styles/tab.scss';
 
 function Tab({list, addClass, active= 0, link= [], listClass = []}){
-    const [menuTab, setMenuTab] = useRecoilState(menuTabState)
+    const [menuTab, setMenuTab] = useRecoilState(menuTabState);
+    const [eventTab, setEventTab] = useRecoilState(eventTabState);
+
     useEffect(() => {
         const tab = document.querySelectorAll('.tab-round, .tab-line');
         tab.forEach((el, idx) => {
             el.childNodes[0].classList.add('active')
         })
         setMenuTab('pizza');
+        setEventTab('event');
     }, []);
         
     const onClick = (event) => {
@@ -23,6 +26,7 @@ function Tab({list, addClass, active= 0, link= [], listClass = []}){
         $li.classList.add('active');
         
         setMenuTab($li.classList[0]);
+        setEventTab($li.classList[0]);
     }
     return (
         <ul className={addClass ? `tab${addClass}` : 'tab'}>

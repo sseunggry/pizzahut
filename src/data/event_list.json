@@ -1,0 +1,78 @@
+{
+    "eventList": [
+        {
+            "tit": "제주 스페셜 에디션 22,900원",
+            "period": "23.12.01 ~ 23.12.31",
+            "thumbImg": "img_event_01.png",
+            "detailImg": "img_event_detail_01.png"
+        },
+        {
+            "tit": "NEW 와우박스",
+            "period": "23.11.01 ~ 23.12.31",
+            "thumbImg": "img_event_02.png",
+            "detailImg": "img_event_detail_02.png"
+        },
+        {
+            "tit": "팬피자 스페셜",
+            "period": "23.11.01 ~ 23.12.31",
+            "thumbImg": "img_event_03.png",
+            "detailImg": "img_event_detail_03.png"
+        },
+        {
+            "tit": "아보카도 쉬림프",
+            "period": "23.05.01 ~ 23.12.31",
+            "thumbImg": "img_event_04.png",
+            "detailImg": "img_event_detail_04.png"
+        },
+        {
+            "tit": "봄 신메뉴 출시",
+            "period": "23.01.01 ~ 23.12.31",
+            "thumbImg": "img_event_05.png",
+            "detailImg": "img_event_detail_05.png"
+        },
+        {
+            "tit": "디트로이트 스타일 피자",
+            "period": "23.01.01 ~ 23.12.31",
+            "thumbImg": "img_event_06.png",
+            "detailImg": "img_event_detro.png"
+        }
+    ],
+    "partnerList": [
+        {
+            "percent": 15,
+            "img": "img_event_partner_01.png",
+            "name": "KT 멤버십",
+            "desc": {
+                "desc1" : ["전체금액" , "15% 할인"],
+                "desc2" : ["KT 멤버십", "15% 차감"]
+            }
+        },
+        {
+            "percent": 15,
+            "img": "img_event_partner_02.png",
+            "name": "LG U+멤버십",
+            "desc": {
+                "desc1" : ["전체금액" , "15% 할인"],
+                "desc2" : ["KT 멤버십", "15% 차감"]
+            }
+        },
+        {
+            "percent": 30,
+            "img": "img_event_partner_03.png",
+            "name": "OK캐쉬백",
+            "desc": {
+                "desc1" : ["전체금액" , "30% 할인"],
+                "desc2" : ["OK캐쉬백 포인트", "15% 차감"],
+                "desc3" : ["OK캐쉬백", "2% 적립"]
+            }
+        },
+        {
+            "percent": 50,
+            "img": "img_event_partner_04.png",
+            "name": "현대 M카드",
+            "desc": {
+                "desc1" : ["매일 전체금액 " , "50% 할인", "(M포인트 50% 차감결제)"]
+            }
+        }
+    ]
+}

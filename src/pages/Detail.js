@@ -1,10 +1,9 @@
 import {Link, useParams} from "react-router-dom";
 import Layout from "../components/Layout";
 import Input from "../components/Input";
-import InputGroup from "../components/InputGroup";
 import {useEffect, useState} from "react";
 import {menuListData, selectListData, contentImg, selectDataState} from "../recoil/atoms";
-import {parentNodeFind, popupOpen, priceDot} from "../js/commonFn";
+import {parentNodeFind, popupClose, popupOpen, priceDot} from "../js/commonFn";
 
 import '../styles/detail.scss';
 import Button from "../components/Button";
@@ -21,7 +20,6 @@ function Detail(){
     const {edgeList, toppingList} = selectListData;
     const sale = 30;
     let index, fullImg = fullImg1;
-    let addClass = '';
 
     const radioOnChange = (e) => {
         const {name, value} = e.target;
@@ -32,7 +30,7 @@ function Detail(){
         });
 
         if(name === 'edge'){
-            let edgeLists = parentNodeFind(e, 'edge-list').querySelectorAll('input[type="radio"]');
+            let edgeLists = parentNodeFind(e.target, 'edge-list').querySelectorAll('input[type="radio"]');
 
             Object.values(edgeLists).map((el, idx) => {
                 if(el.checked) index = idx;
@@ -57,12 +55,13 @@ function Detail(){
     const checkOnChange = (e) => {
         const target = e.target;
         const {value} = target;
-        const toppingLists = parentNodeFind(e, 'topping-list');
+        const toppingLists = parentNodeFind(e.target, 'topping-list');
         const toppingChecked = toppingLists.querySelectorAll('input[type="checkbox"]:checked');
 
         if(toppingChecked.length > 2){
             target.checked = false;
-            return alert('피자 1판당 2개 토핑 추가 가능합니다. (중복불가)');
+            popupOpen('popupAlert');
+            // return alert('피자 1판당 2개 토핑 추가 가능합니다. (중복불가)');
         }
         setTopping((prev) => updateCheckList(prev, value));
     }
@@ -188,11 +187,18 @@ function Detail(){
                     <Button text="장바구니 담기" size="m" type="primary" addClass="btn-cart" onClick={cartBtnOnClick}/>
                 </div>
             </Layout>
-            <Popup btnText="확인" addClass={addClass} dataPop="popupCart">
+            <Popup btnText="확인" dataPop="popupCart" btnClose="true">
                 <p className="txt">장바구니에 담겼습니다. <br/> 장바구니로 이동할까요?</p>
+                <div className="popup-btn">
+                    <Button text="확인" size="m" type="primary" link="/myPage"/>
+                    <Button text="취소" size="m" type="line"  tag="button" addClass="btn-close" onClick={popupClose}/>
+                </div>
             </Popup>
-            <Popup btnText="확인" addClass={addClass} dataPop="popup2">
-                <p className="txt">2개 이상은 불가능합니다.</p>
+            <Popup btnText="확인" dataPop="popupAlert">
+                <p className="txt">피자 1판당, 최대 2개 <br/> 토핑 추가 가능합니다. (중복 불가)</p>
+                <div className="popup-btn">
+                    <Button text="확인" size="m" type="primary" onClick={popupClose}/>
+                </div>
             </Popup>
         </>
     )

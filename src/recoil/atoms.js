@@ -1,6 +1,7 @@
 import {atom} from "recoil";
 import menuData from "../data/menu_list.json";
 import selectData from "../data/select_list.json";
+import eventData from "../data/event_list.json";
 
 //variable
 export const commonImg = "/resource/img/common";
@@ -30,14 +31,21 @@ export const menu = [
 
 export const menuListData = menuData;
 export const selectListData = selectData;
+export const eventListData = eventData.eventList;
+export const partnerListData = eventData.partnerList;
 
 //atom
 export const menuTabState = atom({
     key: "menuTabState",
     default: "pizza"
-})
+});
+
+export const eventTabState = atom({
+    key: "eventTabState",
+    default: "event"
+});
 
 export const selectDataState = atom({
     key: "selectDataState",
     default: []
-})
+});

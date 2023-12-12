@@ -6,6 +6,7 @@ import Tab from "../components/Tab";
 import {useRecoilState} from "recoil";
 import {contentImg, selectDataState} from "../recoil/atoms";
 import {priceDot} from "../js/commonFn";
+import {Link} from "react-router-dom";
 
 function MyPage() {
     const [selectData, setSelectData] = useRecoilState(selectDataState);
@@ -38,43 +39,55 @@ function MyPage() {
             </div>
             
             <div className="cart-info">
-                <Tab addClass="-round" list={["배달", "포장"]} />
-                <ul className="cart-list">
-                    {selectData.map(({thumbImg, name, edge, size, topping, count, originPrice, sale, toppingPrice}, idx) => (
-                        <li key={idx}>
-                            <img src={`${contentImg}/${thumbImg}`} alt="" />
-                            <div className="txt-con">
-                                <p>
-                                    {name}
-                                    <span className="c-red">({size})</span>
-                                    <span className="count c-red">{count}개</span>
-                                </p>
-                                <dl>
-                                    <dt>엣지</dt>
-                                    <dd>{edge} 엣지</dd>
-                                </dl>
-                                {(topping.size === 0) ? '' : (
+                <Tab addClass="-square" list={["배달", "포장"]} />
+
+                {selectData.length === 0 ? (
+                    <>
+                        <div className="cart-empty">
+                            <p>장바구니가 비어있습니다.</p>
+                            <Button text="메뉴 선택하기" size="m" type="primary" link="/menu"/>
+                        </div>
+                    </>
+                ) : (
+                    <ul className="cart-list">
+                        {selectData.map(({thumbImg, name, edge, size, topping, count, originPrice, sale, toppingPrice}, idx) => (
+                            <li key={idx}>
+                                <img src={`${contentImg}/${thumbImg}`} alt="" />
+                                <div className="txt-con">
+                                    <p>
+                                        {name}
+                                        <span className="c-red">({size})</span>
+                                        <span className="count c-red">{count}개</span>
+                                    </p>
                                     <dl>
-                                        <dt>토핑</dt>
-                                        <dd>
-                                            {topping.join(', ')}
-                                        </dd>
+                                        <dt>엣지</dt>
+                                        <dd>{edge} 엣지</dd>
                                     </dl>
-                                )}
-                                <dl>
-                                    <dt>수량</dt>
-                                    <dd>{count}</dd>
-                                </dl>
-                            </div>
-                            <button className="btn-delete" onClick={deleteClick}></button>
-                            <div className="price-con">
-                                <span className="origin_price">{priceDot(originPrice*count + toppingPrice)}원</span>
-                                <span className="sale_percent c-red">{sale}%</span>
-                                <span className="price">{priceDot(originPrice*((100-sale)/100)*count + toppingPrice)}원</span>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                                    {(topping.size === 0) ? '' : (
+                                        <dl>
+                                            <dt>토핑</dt>
+                                            <dd>
+                                                {topping.join(', ')}
+                                            </dd>
+                                        </dl>
+                                    )}
+                                    <dl>
+                                        <dt>수량</dt>
+                                        <dd>{count}</dd>
+                                    </dl>
+                                </div>
+                                <button className="btn-delete" onClick={deleteClick}></button>
+                                <div className="price-con">
+                                    <span className="origin_price">{priceDot(originPrice*count + toppingPrice)}원</span>
+                                    <span className="sale_percent c-red">{sale}%</span>
+                                    <span className="price">{priceDot(originPrice*((100-sale)/100)*count + toppingPrice)}원</span>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                )
+                }
+
             </div>
 
         </Layout>

@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {commonImg} from "../../recoil/atoms";
 import '../../styles/_inc/header.scss';
 
@@ -13,9 +13,13 @@ function Logo(){
 }
 
 function Header({backBtn, title, address}){
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);
+    }
     return (
         <header className="header">
-            {backBtn ?  <Link className="btn-back"><img src={`${commonImg}/ico_back.png`} alt="" /></Link> :  <Logo />}
+            {backBtn ?  <button className="btn-back" onClick={goBack}><img src={`${commonImg}/ico_back.png`} alt="" /></button> :  <Logo />}
             {title ? <h2 className="head-tit">{title}</h2> : address ? <Link to="/address" className="btn-address">{address}</Link> : ''}
             <Link className="btn-cart">
                 <img src={`${commonImg}/ico_cart.png`} alt="cart" />

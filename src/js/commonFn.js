@@ -1,11 +1,7 @@
 //부모요소 찾기 함수
-export const parentNodeFind = (e, className) => {
-    let el = e.target;
-
-    if(!(el === undefined)){
-        while(!el.classList.contains(className)){
-            el = el.parentNode;
-        }
+export const parentNodeFind = (el, className) => {
+    while(!(el == null) && !el.classList.contains(className)){
+        el = el.parentElement;
     }
     return el;
 }
@@ -26,9 +22,8 @@ export const popupOpen = (popData) => {
 
 //팝업 닫기
 export const popupClose = (e) => {
-    const popupWrap = parentNodeFind(e, 'popup-wrap');
+    const popupWrap = parentNodeFind(e.target, 'popup-wrap');
     // const popupWrap = parentNodeFind(e, '12325456');
-    console.log(popupWrap);
 
     popupWrap.classList.remove('open');
 }
