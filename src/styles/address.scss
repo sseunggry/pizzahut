@@ -1,0 +1,44 @@
+@import "./base/variables";
+@import "./base/mixins";
+
+.inp{
+  &.search{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8.33vw;
+    height: 13.89vw;
+    border-bottom: 0.42vw solid #bbb;
+
+    .input-area {
+      width: 90%;
+      font-size: 3.89vw;
+
+      input{
+        width: 100%;
+
+        &::placeholder {
+          color: #999;
+        }
+      }
+
+    }
+    .btn-search {
+      margin-left: auto;
+      width: 8.33vw;
+      height: 8.33vw;
+      @include bg('common/ico_search1.png', center, 5.00vw auto);
+    }
+  }
+}
+
+.find-address {
+  a::before {
+    content: '';
+    display: inline-block;
+    margin-right: 1.67vw;
+    width: 5.00vw;
+    height: 5.00vw;
+    @include bg('common/ico_location1_w.png', center, cover);
+  }
+}
+

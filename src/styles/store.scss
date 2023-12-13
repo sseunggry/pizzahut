@@ -1,0 +1,43 @@
+@import "./base/variables";
+
+.result-store {
+  padding-top: 8.33vw;
+
+  .result {
+    font-size: 3.33vw;
+    font-weight: 500;
+  }
+
+  .store-list {
+    margin: 5.56vw 0;
+
+    .item + .item {
+      margin-top: 4.17vw;
+    }
+
+    dl {
+      padding: 5.56vw;
+      border-radius: 4.17vw;
+      box-shadow: 0 0 0.83vw rgba(0, 0, 0, 0.15);
+    }
+
+    dt {
+      margin-bottom: 4.17vw;
+      font-size: 3.33vw;
+      font-weight: 500;
+
+      .distance {
+        display: inline-block;
+        margin-right: 2.78vw;
+        font-weight: 700;
+      }
+    }
+
+    dd {
+      font-size: 3.33vw;
+      color: #666;
+      line-height: 1.6;
+    }
+  }
+}
+

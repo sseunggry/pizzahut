@@ -1,12 +1,13 @@
 import {useEffect} from "react";
 import {Link} from "react-router-dom";
 import {useRecoilState, useSetRecoilState} from "recoil";
-import {eventTabState, menuTabState} from "../recoil/atoms";
+import {eventTabState, menuTabState, pickupStoreTabState} from "../recoil/atoms";
 import '../styles/tab.scss';
 
 function Tab({list, addClass, active= 0, link= [], listClass = []}){
     const [menuTab, setMenuTab] = useRecoilState(menuTabState);
     const [eventTab, setEventTab] = useRecoilState(eventTabState);
+    const [pickupTab , setPickupTab] = useRecoilState(pickupStoreTabState);
 
     useEffect(() => {
         const tab = document.querySelectorAll('.tab-round, .tab-line');
@@ -15,18 +16,20 @@ function Tab({list, addClass, active= 0, link= [], listClass = []}){
         })
         setMenuTab('pizza');
         setEventTab('event');
+        setPickupTab('nearby');
     }, []);
         
-    const onClick = (event) => {
-        const $li = event.target.parentElement;
+    const onClick = (e) => {
+        const $li = e.target.parentElement;
         const $ul = $li.parentElement;
         $ul.childNodes.forEach((el, idx) => {
             el.classList.remove('active')
         });
         $li.classList.add('active');
-        
+
         setMenuTab($li.classList[0]);
         setEventTab($li.classList[0]);
+        setPickupTab($li.classList[0]);
     }
     return (
         <ul className={addClass ? `tab${addClass}` : 'tab'}>

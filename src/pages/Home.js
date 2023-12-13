@@ -17,6 +17,7 @@ function Home(){
             <Tab
                 addClass="-round"
                 list={["배달", "포장"]}
+                link={["", "/pickup"]}
             />
     
             <SlideBanner

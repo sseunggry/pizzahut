@@ -39,7 +39,7 @@ function MyPage() {
             </div>
             
             <div className="cart-info">
-                <Tab addClass="-square" list={["배달", "포장"]} />
+                <Tab addClass="-square" list={["배달", "포장"]} link={["", "/pickup"]} />
 
                 {selectData.length === 0 ? (
                     <>

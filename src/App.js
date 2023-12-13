@@ -6,9 +6,10 @@ import MyPage from "./pages/MyPage";
 import Event from "./pages/Event";
 import Detail from "./pages/Detail";
 import Address from "./pages/Address";
-import "./styles/base/_index.scss";
 import EventDetail from "./pages/EventDetail";
+import Pickup from "./pages/Pickup";
 
+import "./styles/base/_index.scss";
 import { RecoilEnv } from 'recoil';
 RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
 
@@ -24,6 +25,7 @@ function App() {
                   <Route path="/event/:id" element={<EventDetail />} />
                   <Route path="/menu/:id" element={<Detail />} />
                   <Route path="/address" element={<Address />} />
+                  <Route path="/pickup" element={<Pickup />} />
               </Routes>
           </Router>
       </RecoilRoot>

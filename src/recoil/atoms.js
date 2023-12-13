@@ -2,6 +2,7 @@ import {atom} from "recoil";
 import menuData from "../data/menu_list.json";
 import selectData from "../data/select_list.json";
 import eventData from "../data/event_list.json";
+import storeData from "../data/store_list.json";
 
 //variable
 export const commonImg = "/resource/img/common";
@@ -33,6 +34,7 @@ export const menuListData = menuData;
 export const selectListData = selectData;
 export const eventListData = eventData.eventList;
 export const partnerListData = eventData.partnerList;
+export const storeListData = storeData;
 
 //atom
 export const menuTabState = atom({
@@ -43,6 +45,11 @@ export const menuTabState = atom({
 export const eventTabState = atom({
     key: "eventTabState",
     default: "event"
+});
+
+export const pickupStoreTabState = atom({
+    key: "pickupStoreTabState",
+    default: "nearby"
 });
 
 export const selectDataState = atom({
