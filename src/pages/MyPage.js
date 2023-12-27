@@ -23,6 +23,8 @@ function MyPage() {
         setSelectData(newSelectData);
     }
 
+    // console.log(selectData[0], selectData[0].toppingPrice.price);
+
     return (
         <Layout header={{title: "마이페이지"}}>
             <div className="login-info">
@@ -80,7 +82,7 @@ function MyPage() {
                                 <div className="price-con">
                                     <span className="origin_price">{priceDot(originPrice*count + toppingPrice)}원</span>
                                     <span className="sale_percent c-red">{sale}%</span>
-                                    <span className="price">{priceDot(originPrice*((100-sale)/100)*count + toppingPrice)}원</span>
+                                    <span className="price">{priceDot(Math.ceil(originPrice*((100-sale)/100)*count + toppingPrice))}원</span>
                                 </div>
                             </li>
                         ))}

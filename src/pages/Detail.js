@@ -80,7 +80,10 @@ function Detail(){
         setData();
         popupOpen('popupCart');
     }
+
     const setData = () => {
+        const toppingPrice = topping.size === 0 ? 0 : toppingList.filter(el => el.name === topping[0] || el.name === topping[1]).map(({price}) => price).reduce((acc, cur) => acc + cur);
+
         setSelectData((prev) => ([{
             ...inputValue,
             "topping" : topping,
@@ -88,7 +91,7 @@ function Detail(){
             "name" : name,
             "thumbImg" : thumbImg,
             "originPrice": (inputValue.size === 'M') ? priceMedium: priceLarge,
-            "toppingPrice" : topping.size === 0 ? 0 : toppingList.filter(el => el.name === topping[0] || el.name === topping[1]).reduce((acc, cur) => acc.price + cur.price),
+            "toppingPrice" : toppingPrice,
             "sale": sale
         }, ...prev]));
     }
@@ -142,7 +145,7 @@ function Detail(){
                                     <Input type="radio" value="M" name="size" id="radio-size1" onChange={radioOnChange}>
                                         <span>M</span>
                                         <span className="price">
-                                            <span className="sale">{priceDot(priceMedium*((100-sale)/100))}원</span>
+                                            <span className="sale">{priceDot(Math.ceil(priceMedium*((100-sale)/100)))}원</span>
                                             <span className="origin">{priceDot(priceMedium)}</span>
                                         </span>
                                     </Input>
@@ -151,7 +154,7 @@ function Detail(){
                                     <Input type="radio" value="L" name="size" id="radio-size2" onChange={radioOnChange}>
                                         <span>L</span>
                                         <span className="price">
-                                            <span className="sale">{priceDot(priceLarge*((100-sale)/100))}원</span>
+                                            <span className="sale">{priceDot(Math.ceil(priceLarge*((100-sale)/100)))}원</span>
                                             <span className="origin">{priceDot(priceLarge)}</span>
                                         </span>
                                     </Input>
