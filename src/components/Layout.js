@@ -14,7 +14,7 @@ function Layout({header, bottomMenu = true, footer, children}){
                 />
             )}
             
-            <div className="container">
+            <div className={!bottomMenu ? 'container no-bottom' : 'container'}>
                 {children}
             </div>
     

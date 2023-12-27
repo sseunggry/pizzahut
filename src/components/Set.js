@@ -4,9 +4,6 @@ import {priceDot} from "../js/commonFn";
 
 function Set() {
     const set = menuListData.setList;
-    // const priceDot = (price) => {
-    //     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    // }
     return (
         <div className="menu-set">
             <ul className="thumb-list">

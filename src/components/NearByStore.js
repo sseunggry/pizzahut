@@ -10,6 +10,7 @@ function NearByStore(){
             <div className="store-list">
                 {storeListData.map(({distance, name, address, packTime, openHours, tel}, idx) => (
                     <div key={idx} className="item">
+                        <Link to=""></Link>
                         <dl>
                             <dt>
                                 <span className="distance c-blue">1.8km</span> {name}
@@ -17,7 +18,7 @@ function NearByStore(){
                             <dd>{address}</dd>
                             <dd>예상 포장시간 : {packTime}</dd>
                             <dd>운영시간 : {openHours}</dd>
-                            <dd><a href={`tel:${tel}`}>매장 전화번호 : {tel}</a></dd>
+                            <dd className="tel"><a href={`tel:${tel}`}>매장 전화번호 : {tel}</a></dd>
                         </dl>
                     </div>
                 ))}

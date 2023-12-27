@@ -1,9 +1,9 @@
 .swiper{
   &.main-slider{
     position: relative;
-    margin: 13.89vw 0 8.33vw;
-
-    border-radius: 20px;
+    margin: 13.89vw -5.56vw 8.33vw;
+    padding: 0 5.56vw;
+    border-radius: 2.78vw;
 
     .txt-con{
       position: absolute;

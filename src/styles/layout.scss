@@ -16,6 +16,10 @@
     &::-webkit-scrollbar {
         display: none;
     }
+
+    &.no-bottom{
+        height: calc(100vh - 16.67vw);
+    }
 }
 
 .inner {

@@ -5,7 +5,7 @@ import "../styles/address.scss";
 
 function Address(){
     return(
-        <Layout header={{title: '주소 설정', backBtn: 'true'}} bottomMenu="false">
+        <Layout header={{title: '주소 설정', backBtn: 'true'}} bottomMenu={false}>
             <div className="inp search">
                 <div className="input-area">
                     <input type="text" placeholder="건물명, 도로명 또는 지번으로 검색" />

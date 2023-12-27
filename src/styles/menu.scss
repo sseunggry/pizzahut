@@ -232,16 +232,17 @@
         }
       }
       .info-txt {
+        display: flex;
+        align-items: center;
         margin-top: 1.67vw;
+
         .ico-plus {
           position: relative;
-          overflow: hidden;
-          margin: -0.42vw 1vw 0;
+          margin: 0 1vw;
           width: 2.78vw;
           height: 2.78vw;
           background: #ddd;
           border-radius: 50%;
-          vertical-align: middle;
 
           &::before {
             content: '';
@@ -275,6 +276,7 @@
 
 /* side */
 .menu-side{
+  padding-bottom: 16.67vw;
   .thumb-list{
     display: grid;
     grid-template-columns: 1fr 1fr;

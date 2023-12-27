@@ -12,7 +12,7 @@
 }
 
 .menu-detail {
-	padding: 6.94vw 0;
+	padding: 6.94vw 0 16.67vw;
 
 	.detail-info{
 		.tit-con {
@@ -45,8 +45,13 @@
 	.select-con {
 		padding-top: 13.89vw;
 
-		> dl + dl{
-			margin-top: 13.89vw;
+		> dl{
+			margin-bottom: 13.98vw;
+
+			&:last-of-type{
+				margin-bottom: 8.33vw;
+				//margin-bottom: 0;
+			}
 		}
 
 		dt{
@@ -228,7 +233,14 @@
 			}
 		}
 	}
-	.btn-cart{
-		margin-top: 40px;
+}
+.btn-floating{
+	&.btn-cart{
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 16.67vw;
+		border-radius: 0;
 	}
 }

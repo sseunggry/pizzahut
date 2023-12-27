@@ -111,7 +111,7 @@ function Detail(){
 
     return (
         <>
-            <Layout header={{title: `${name}`, backBtn:"true"}}  bottomMenu>
+            <Layout header={{title: `${name}`, backBtn:"true"}} bottomMenu={false}>
                 <div className="menu-detail">
                     <div className="detail-info">
                         <div className="tit-con">
@@ -184,8 +184,8 @@ function Detail(){
                             <dd className="notice-txt">피자 수량 변경 시 동일한 피자&토핑이 적용됩니다.</dd>
                         </dl>
                     </div>
-                    <Button text="장바구니 담기" size="m" type="primary" addClass="btn-cart" onClick={cartBtnOnClick}/>
                 </div>
+                <Button text="장바구니 담기" size="m" type="primary" addClass="btn-floating btn-cart" onClick={cartBtnOnClick}/>
             </Layout>
             <Popup btnText="확인" dataPop="popupCart" btnClose="true">
                 <p className="txt">장바구니에 담겼습니다. <br/> 장바구니로 이동할까요?</p>
