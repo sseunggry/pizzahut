@@ -6,7 +6,6 @@ import Tab from "../components/Tab";
 import {useRecoilState} from "recoil";
 import {contentImg, selectDataState} from "../recoil/atoms";
 import {priceDot} from "../js/commonFn";
-import {Link} from "react-router-dom";
 
 function MyPage() {
     const [selectData, setSelectData] = useRecoilState(selectDataState);
@@ -23,8 +22,6 @@ function MyPage() {
         setSelectData(newSelectData);
     }
 
-    // console.log(selectData[0], selectData[0].toppingPrice.price);
-
     return (
         <Layout header={{title: "마이페이지"}}>
             <div className="login-info">
@@ -35,13 +32,13 @@ function MyPage() {
                 </h2>
                 
                 <div className="btn-wrap">
-                    <Button text="멤버십 혜택" size="m" type="sub-primary" addClass="c-indigo" />
-                    <Button text="로그인 하기" size="m" type="sub-primary" addClass="c-indigo" />
+                    <Button text="멤버십 혜택" size="s" type="sub-primary" addClass="c-indigo" link={"/event"} />
+                    <Button text="로그인 하기" size="s" type="sub-primary" addClass="c-indigo" />
                 </div>
             </div>
             
             <div className="cart-info">
-                <Tab addClass="-square" list={["배달", "포장"]} link={["", "/pickup"]} />
+                <Tab addClass="-square" list={["배달", "포장"]} link={["", "/pickup"]} listClass={['active', '']}/>
 
                 {selectData.length === 0 ? (
                     <>

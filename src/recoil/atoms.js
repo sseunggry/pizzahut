@@ -56,3 +56,8 @@ export const selectDataState = atom({
     key: "selectDataState",
     default: []
 });
+
+export const selectSideState = atom({
+   key: "selectSideState",
+   default: []
+});

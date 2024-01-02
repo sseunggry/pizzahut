@@ -1,13 +1,13 @@
 import {useEffect} from "react";
 import {Link} from "react-router-dom";
-import {useRecoilState, useSetRecoilState} from "recoil";
+import {useSetRecoilState} from "recoil";
 import {eventTabState, menuTabState, pickupStoreTabState} from "../recoil/atoms";
 import '../styles/tab.scss';
 
 function Tab({list, addClass, active= 0, link= [], listClass = []}){
-    const [menuTab, setMenuTab] = useRecoilState(menuTabState);
-    const [eventTab, setEventTab] = useRecoilState(eventTabState);
-    const [pickupTab , setPickupTab] = useRecoilState(pickupStoreTabState);
+    const setMenuTab = useSetRecoilState(menuTabState);
+    const setEventTab = useSetRecoilState(eventTabState);
+    const setPickupTab = useSetRecoilState(pickupStoreTabState);
 
     useEffect(() => {
         const tab = document.querySelectorAll('.tab-round, .tab-line');

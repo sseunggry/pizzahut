@@ -1,42 +1,57 @@
 import {Link} from "react-router-dom";
-import {menuListData, contentImg} from "../recoil/atoms";
-import {useState} from "react";
+import {menuListData, contentImg, selectSideState} from "../recoil/atoms";
 import {popupClose, popupOpen, priceDot} from "../js/commonFn";
 import Button from "./Button";
 import Popup from "./Popup";
+import {useRecoilState} from "recoil";
 
 function Side() {
     const side = menuListData.sideList;
-    const [inputVal, setInputVal] = useState(0);
+    const [selectData, setSelectData] = useRecoilState(selectSideState);
+
     const btnMinusClick = (e) => {
         const btnCount = e.target.parentNode;
-        const inputCount = btnCount.querySelector('.count');
-        let inputValue = Number(inputCount.value);
+        const count = btnCount.querySelector('.count');
 
-        if(inputVal > 0){
-            // inputCount.value = inputValue - 1;
-            setInputVal(inputVal - 1);
+        if(Number(count.innerText) > 0){
+            count.innerText--;
         }
     }
     const btnPlusClick = (e) => {
         const btnCount = e.target.parentNode;
-        const inputCount = btnCount.querySelector('.count');
-        let inputValue = Number(inputCount.value);
+        const count = btnCount.querySelector('.count');
 
-        // inputCount.value = inputValue + 1;
-        setInputVal(inputVal + 1);
+        count.innerText++;
     }
-    const btnCountChange = (e) => {
-        console.log(e.target.parentNode.querySelector('input'));
-        const {value, name} = e.target;
-        // setInputVal({
-        //     ...inputVal,
-        //     [name]: value
-        // });
+
+    const cartOnClick = () => {
+        const countNum = document.querySelectorAll('.thumb-list .count');
+
+        countNum.forEach((el, idx) => {
+            if(el.innerText > 0) {
+                setSelectData((prev) => ([{
+                    ...side[idx],
+                   "count" : Number(el.innerText)
+                }, ...prev]));
+
+                // setSelectData((prev) => updateCheckList(prev, side[idx]));
+            }
+        })
+
     }
-    // const btnCountClick = (e) => {
-    //     console.log(e.target.parentNode.parentNode);
-    // }
+    const updateCheckList = (set, value) => {
+        const updatedSet = new Set(set);
+
+        if(updatedSet.has(value)){
+            updatedSet.delete(value);
+        } else{
+            updatedSet.add(value);
+        }
+
+        return [...updatedSet];
+    }
+        console.log(selectData);
+
     return (
         <>
             <div className="menu-side">
@@ -60,16 +75,17 @@ function Side() {
                                 )}
                             </dd>
                         </dl>
-                        <div className="btn-count" onClick={btnCountChange}>
+                        <div className="btn-count">
                             <button className="minus" onClick={btnMinusClick}></button>
-                            <input type="text" value={inputVal} name={`count${idx}`} readOnly className="count" />
+                            <span className="count">0</span>
+                            {/*<input type="text" value={inputVal} name={`count${idx}`} readOnly className="count" />*/}
                             <button className="plus" onClick={btnPlusClick}></button>
                         </div>
                     </li>
                 )}
                 </ul>
             </div>
-            <Button text="장바구니 담기" size="m" type="primary" addClass="btn-floating btn-cart" />
+            <Button text="장바구니 담기" size="m" type="primary" addClass="btn-floating btn-cart" onClick={cartOnClick}/>
         </>
     )
 }
