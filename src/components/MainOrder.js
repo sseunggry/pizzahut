@@ -1,6 +1,5 @@
 import '../styles/mainorder.scss';
 import {Link} from "react-router-dom";
-import Tab from "./Tab";
 
 function MainOrder({text}){
     return (

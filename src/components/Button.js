@@ -14,28 +14,6 @@ function Button({tag = 'a', type, text, size, link = '' , addClass= '', onClick}
             {btnCont}
         </div>
     )
-    
-    // if(tag === 'button') {
-    //     return (
-    //         <div className="btn-con">
-    //          <button type="button" className={style}>{text}</button>
-    //         </div>
-    //     )
-    // } else {
-    //     return (
-    //         <Link to="" className={style}>{text}</Link>
-    //     )
-    // }
-    
-    // return (
-    //     <div className="btn-con">
-    //         {tag === 'a' ? (
-    //             <Link to="" className={style}>{text}</Link>
-    //         ) : tag === 'button' ? (
-    //             <button type="button" className={style}>{text}</button>
-    //         ) : ''}
-    //     </div>
-    // )
 }
 
 export default Button;

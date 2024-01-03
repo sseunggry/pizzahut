@@ -3,6 +3,7 @@ import menuData from "../data/menu_list.json";
 import selectData from "../data/select_list.json";
 import eventData from "../data/event_list.json";
 import storeData from "../data/store_list.json";
+import {recoilPersist} from "recoil-persist";
 
 //variable
 export const commonImg = "/resource/img/common";
@@ -37,6 +38,11 @@ export const partnerListData = eventData.partnerList;
 export const storeListData = storeData;
 
 //atom
+const {persistAtom} = recoilPersist({
+    key: "orderSelectData",
+    storage: sessionStorage
+});
+
 export const menuTabState = atom({
     key: "menuTabState",
     default: "pizza"
@@ -54,5 +60,6 @@ export const pickupStoreTabState = atom({
 
 export const selectDataState = atom({
     key: "selectDataState",
-    default: []
+    default: [],
+    effects_UNSTABLE: [persistAtom],
 });

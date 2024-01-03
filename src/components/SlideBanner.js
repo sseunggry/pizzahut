@@ -6,7 +6,6 @@ import "swiper/css/pagination";
 import "../styles/slidebanner.scss";
 
 function SlideBanner({list, addClass}){
-
     return (
         <Swiper
             className={addClass ? addClass : ''}
@@ -25,14 +24,14 @@ function SlideBanner({list, addClass}){
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination]}
         >
-            {list.map((item, idx) =>
+            {list.map(({desc, tit, img}, idx) =>
                 <SwiperSlide key={idx}>
                     <div className="txt-con">
-                        <p className="desc">{item.desc}</p>
-                        <h3 className="tit">{item.tit}</h3>
+                        <p className="desc">{desc}</p>
+                        <h3 className="tit">{tit}</h3>
                     </div>
                     <div className="img-con">
-                        <img src={`/resource/img/contents/${item.img}`} alt="" />
+                        <img src={`/resource/img/contents/${img}`} alt="" />
                     </div>
                 </SwiperSlide>
             )}

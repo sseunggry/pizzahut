@@ -1,7 +1,6 @@
 import Layout from "../components/Layout";
 import Tab from "../components/Tab";
 import Pizza from "../components/Pizza";
-import Set from "../components/Set";
 import Side from "../components/Side";
 import {useRecoilValue} from "recoil";
 import {menuTabState} from "../recoil/atoms";
@@ -15,11 +14,10 @@ function Menu(){
             <div className="menu">
                 <Tab
                     addClass="-line"
-                    list={["피자", "세트", "사이드"]}
-                    listClass={["pizza", "set", "side"]}
+                    list={["피자", "사이드"]}
+                    listClass={["pizza", "side"]}
                 />
                 {menuTab === 'pizza' && <Pizza />}
-                {menuTab === 'set' && <Set />}
                 {menuTab === 'side' && <Side />}
             </div>
         </Layout>
