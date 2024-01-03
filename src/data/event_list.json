@@ -1,40 +1,40 @@
 {
     "eventList": [
         {
-            "tit": "제주 스페셜 에디션 22,900원",
-            "period": "23.12.01 ~ 23.12.31",
+            "tit": "SKT 0 day",
+            "period": "24.01.01 ~ 24.02.03",
             "thumbImg": "img_event_01.png",
             "detailImg": "img_event_detail_01.png"
         },
         {
-            "tit": "NEW 와우박스",
-            "period": "23.11.01 ~ 23.12.31",
+            "tit": "5메이징 픽업 프로모션",
+            "period": "23.11.01 ~ ",
             "thumbImg": "img_event_02.png",
             "detailImg": "img_event_detail_02.png"
         },
         {
-            "tit": "팬피자 스페셜",
-            "period": "23.11.01 ~ 23.12.31",
+            "tit": "프리미엄 베스트 제품을 하프앤하프로! ",
+            "period": "23.04.18 ~ 24.01.08",
             "thumbImg": "img_event_03.png",
             "detailImg": "img_event_detail_03.png"
         },
         {
-            "tit": "아보카도 쉬림프",
-            "period": "23.05.01 ~ 23.12.31",
+            "tit": "차량 픽업 서비스",
+            "period": "23.05.01 ~ ",
             "thumbImg": "img_event_04.png",
             "detailImg": "img_event_detail_04.png"
         },
         {
-            "tit": "봄 신메뉴 출시",
-            "period": "23.01.01 ~ 23.12.31",
+            "tit": "피자헛 레터링 피자 프로모션 ",
+            "period": "23.06.09 ~ 24.12.31",
             "thumbImg": "img_event_05.png",
             "detailImg": "img_event_detail_05.png"
         },
         {
-            "tit": "디트로이트 스타일 피자",
-            "period": "23.01.01 ~ 23.12.31",
+            "tit": "매주 주말엔 피자헛과 함께: 포장 40% 할인 ",
+            "period": "23.11.24 ~ 24.12.31",
             "thumbImg": "img_event_06.png",
-            "detailImg": "img_event_detro.png"
+            "detailImg": "img_event_detail_06.png"
         }
     ],
     "partnerList": [

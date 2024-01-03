@@ -11,7 +11,7 @@ import '../styles/menu.scss';
 function Menu(){
     const menuTab = useRecoilValue(menuTabState);
     return (
-        <Layout header={{title : "메뉴"}} bottomMenu={false}>
+        <Layout header={{title : "메뉴", backBtn: true}} bottomMenu={false}>
             <div className="menu">
                 <Tab
                     addClass="-line"

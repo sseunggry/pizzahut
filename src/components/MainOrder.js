@@ -10,7 +10,7 @@ function MainOrder({text}){
             </h3>
             
             <div className="btn-order">
-                <Link>주문하기</Link>
+                <Link to="/menu">주문하기</Link>
             </div>
         </div>
     )

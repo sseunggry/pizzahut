@@ -6,10 +6,10 @@ import Tab from "../components/Tab";
 import {useRecoilState} from "recoil";
 import {contentImg, selectDataState} from "../recoil/atoms";
 import {priceDot} from "../js/commonFn";
+import {useEffect} from "react";
 
 function MyPage() {
     const [selectData, setSelectData] = useRecoilState(selectDataState);
-
     const deleteClick = (e) => {
         const target = e.target;
         const listLi = target.parentNode;
@@ -21,6 +21,11 @@ function MyPage() {
         ))
         setSelectData(newSelectData);
     }
+    // useEffect(() => {
+    //     window.localStorage.setItem("selectData", JSON.stringify(selectData));
+    // },[selectData]);
+
+    console.log(selectData);
 
     return (
         <Layout header={{title: "마이페이지"}}>
@@ -49,30 +54,38 @@ function MyPage() {
                     </>
                 ) : (
                     <ul className="cart-list">
-                        {selectData.map(({thumbImg, name, edge, size, topping, count, originPrice, sale, toppingPrice}, idx) => (
+                        {selectData.map(({thumbImg, name, edge, size, topping=[], count, originPrice, sale, toppingPrice = 0}, idx) => (
                             <li key={idx}>
                                 <img src={`${contentImg}/${thumbImg}`} alt="" />
                                 <div className="txt-con">
                                     <p>
                                         {name}
-                                        <span className="c-red">({size})</span>
-                                        <span className="count c-red">{count}개</span>
+                                        {size && (
+                                            <span className="c-red">({size})</span>
+                                        )}
+                                        {/*<span className="count c-red">{count}개</span>*/}
                                     </p>
-                                    <dl>
-                                        <dt>엣지</dt>
-                                        <dd>{edge} 엣지</dd>
-                                    </dl>
-                                    {(topping.size === 0) ? '' : (
-                                        <dl>
-                                            <dt>토핑</dt>
-                                            <dd>
-                                                {topping.join(', ')}
-                                            </dd>
-                                        </dl>
-                                    )}
+                                    {
+                                        edge && (
+                                            <dl>
+                                                <dt>엣지</dt>
+                                                <dd>{edge} 엣지</dd>
+                                            </dl>
+                                        )
+                                    }
+                                    {
+                                        !topping.size ? '' : (
+                                            <dl>
+                                                <dt>토핑</dt>
+                                                <dd>
+                                                    {topping.join(', ')}
+                                                </dd>
+                                            </dl>
+                                        )
+                                    }
                                     <dl>
                                         <dt>수량</dt>
-                                        <dd>{count}</dd>
+                                        <dd className="c-red">{count}</dd>
                                     </dl>
                                 </div>
                                 <button className="btn-delete" onClick={deleteClick}></button>

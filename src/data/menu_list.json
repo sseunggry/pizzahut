@@ -92,36 +92,36 @@
     ],
     "sideList": [
         {
-            "discount": 50,
+            "sale": 50,
             "name": "상하이 쉬림프 파스타",
-            "priceOrigin": 9800,
+            "originPrice": 9800,
             "thumbImg": "side_thumb_01.png"
         },
         {
-            "discount": 50,
+            "sale": 50,
             "name": "크림 치킨 파스타",
-            "priceOrigin": 8800,
+            "originPrice": 8800,
             "thumbImg": "side_thumb_02.png"
         },
         {
             "name": "팝콘 치킨(20ea)",
-            "priceOrigin": 5800,
+            "originPrice": 5800,
             "thumbImg": "side_thumb_03.png"
         },
         {
             "name": "고르곤졸라 치즈볼",
-            "priceOrigin": 5800,
+            "originPrice": 5800,
             "thumbImg": "side_thumb_04.png"
         },
         {
-            "discount": 30,
+            "sale": 30,
             "name": "대만 연유 치즈볼",
-            "priceOrigin": 4800,
+            "originPrice": 4800,
             "thumbImg": "side_thumb_05.png"
         },
         {
             "name": "순살 허브치킨(8조각)",
-            "priceOrigin": 9900,
+            "originPrice": 9900,
             "thumbImg": "side_thumb_06.png"
         }
     ]

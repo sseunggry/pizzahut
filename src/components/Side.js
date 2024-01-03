@@ -1,13 +1,11 @@
-import {Link} from "react-router-dom";
-import {menuListData, contentImg, selectSideState} from "../recoil/atoms";
-import {popupClose, popupOpen, priceDot} from "../js/commonFn";
+import {menuListData, contentImg, selectDataState} from "../recoil/atoms";
+import {priceDot} from "../js/commonFn";
 import Button from "./Button";
-import Popup from "./Popup";
 import {useRecoilState} from "recoil";
 
 function Side() {
     const side = menuListData.sideList;
-    const [selectData, setSelectData] = useRecoilState(selectSideState);
+    const [selectData, setSelectData] = useRecoilState(selectDataState);
 
     const btnMinusClick = (e) => {
         const btnCount = e.target.parentNode;
@@ -26,40 +24,26 @@ function Side() {
 
     const cartOnClick = () => {
         const countNum = document.querySelectorAll('.thumb-list .count');
+        let selectSideArr = [];
 
         countNum.forEach((el, idx) => {
             if(el.innerText > 0) {
-                setSelectData((prev) => ([{
-                    ...side[idx],
-                   "count" : Number(el.innerText)
-                }, ...prev]));
-
-                // setSelectData((prev) => updateCheckList(prev, side[idx]));
+                let sideArr = {...side[idx]};
+                sideArr.count = Number(el.innerText);
+                selectSideArr.push(sideArr);
             }
-        })
-
+        });
+        setSelectData((prev) => [...selectSideArr, ...prev]);
     }
-    const updateCheckList = (set, value) => {
-        const updatedSet = new Set(set);
-
-        if(updatedSet.has(value)){
-            updatedSet.delete(value);
-        } else{
-            updatedSet.add(value);
-        }
-
-        return [...updatedSet];
-    }
-        console.log(selectData);
 
     return (
         <>
             <div className="menu-side">
                 <ul className="thumb-list">
-                {side.map(({discount, name, priceOrigin, thumbImg}, idx) =>
+                {side.map(({sale, name, originPrice, thumbImg}, idx) =>
                     <li key={idx}>
                         <div className="thumb-img">
-                            {discount && <span className={`flag discount`}>{discount}%</span>}
+                            {sale && <span className={`flag discount`}>{sale}%</span>}
                             <div className="img-con">
                                 <img src={`${contentImg}/${thumbImg}`} alt={name}/>
                             </div>
@@ -67,10 +51,10 @@ function Side() {
                         <dl className="thumb-txt">
                             <dt>{name}</dt>
                             <dd className="price">
-                                <span className={discount ? 'origin-price' : 'origin-price large'}>{priceDot(priceOrigin)}원</span>
-                                {discount && (
+                                <span className={sale ? 'origin-price' : 'origin-price large'}>{priceDot(originPrice)}원</span>
+                                {sale && (
                                     <span className="sale-price">
-                                        {priceDot(Math.ceil(priceOrigin*(1-discount/100)))+'원'}
+                                        {priceDot(Math.ceil(originPrice*(1-sale/100)))+'원'}
                                     </span>
                                 )}
                             </dd>
@@ -78,14 +62,13 @@ function Side() {
                         <div className="btn-count">
                             <button className="minus" onClick={btnMinusClick}></button>
                             <span className="count">0</span>
-                            {/*<input type="text" value={inputVal} name={`count${idx}`} readOnly className="count" />*/}
                             <button className="plus" onClick={btnPlusClick}></button>
                         </div>
                     </li>
                 )}
                 </ul>
             </div>
-            <Button text="장바구니 담기" size="m" type="primary" addClass="btn-floating btn-cart" onClick={cartOnClick}/>
+            <Button text="장바구니 담기" size="m" type="primary" addClass="btn-floating btn-cart" onClick={cartOnClick} link="/mypage" />
         </>
     )
 }
