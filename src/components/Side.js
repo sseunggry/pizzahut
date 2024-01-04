@@ -5,7 +5,7 @@ import {useRecoilState} from "recoil";
 
 function Side() {
     const side = menuListData.sideList;
-    const [selectData, setSelectData] = useRecoilState(selectDataState);
+    const [setSelectData] = useRecoilState(selectDataState);
 
     const btnMinusClick = (e) => {
         const btnCount = e.target.parentNode;

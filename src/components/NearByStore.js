@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {contentImg, storeListData} from "../recoil/atoms";
+import {storeListData} from "../recoil/atoms";
 
 import "../styles/store.scss";
 

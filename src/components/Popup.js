@@ -1,7 +1,4 @@
-import {Link} from "react-router-dom";
 import "../styles/popup.scss";
-import Button from "./Button";
-import {popupClose} from "../js/commonFn";
 
 function Popup({children, addClass, dataPop = ''}){
     return (

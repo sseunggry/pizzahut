@@ -1,4 +1,4 @@
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import Layout from "../components/Layout";
 import Input from "../components/Input";
 import {useEffect, useState} from "react";
@@ -12,11 +12,11 @@ import Popup from "../components/Popup";
 
 function Detail(){
     const {id} = useParams();
-    const [{flag, name, desc, priceMedium, priceLarge, thumbImg, fullImg1, fullImg2, fullImg3}, setItem] = useState({});
+    const [{name, desc, priceMedium, priceLarge, thumbImg, fullImg1, fullImg2, fullImg3}, setItem] = useState({});
     const [inputValue, setInputValue] = useState({});
     const [topping, setTopping] = useState(new Set([]));
     const [count, setCount] = useState(1);
-    const [selectData, setSelectData] = useRecoilState(selectDataState);
+    const [setSelectData] = useRecoilState(selectDataState);
     const {edgeList, toppingList} = selectListData;
     const sale = 30;
     let index, fullImg = fullImg1;

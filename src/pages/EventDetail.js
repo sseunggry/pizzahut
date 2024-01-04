@@ -1,11 +1,11 @@
 import Layout from "../components/Layout";
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 import {contentImg, eventListData} from "../recoil/atoms";
 import {useEffect, useState} from "react";
 
 function EventDetail(){
     const {id} = useParams();
-    const [{tit, period, thumbImg, detailImg}, setData] = useState({});
+    const [{tit, period, detailImg}, setData] = useState({});
 
     useEffect(() => {
         const idx = id.split('_')[1];
