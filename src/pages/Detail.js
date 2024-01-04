@@ -7,7 +7,7 @@ import {parentNodeFind, popupClose, popupOpen, priceDot} from "../js/commonFn";
 
 import '../styles/detail.scss';
 import Button from "../components/Button";
-import {useSetRecoilState} from "recoil";
+import {useRecoilState} from "recoil";
 import Popup from "../components/Popup";
 
 function Detail(){
@@ -16,7 +16,7 @@ function Detail(){
     const [inputValue, setInputValue] = useState({});
     const [topping, setTopping] = useState(new Set([]));
     const [count, setCount] = useState(1);
-    const [setSelectData] = useSetRecoilState(selectDataState);
+    const [selectData, setSelectData] = useRecoilState(selectDataState);
     const {edgeList, toppingList} = selectListData;
     const sale = 30;
     let index, fullImg = fullImg1;

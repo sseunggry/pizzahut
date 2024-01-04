@@ -1,11 +1,11 @@
 import {menuListData, contentImg, selectDataState} from "../recoil/atoms";
 import {priceDot} from "../js/commonFn";
 import Button from "./Button";
-import {useSetRecoilState} from "recoil";
+import {useRecoilState} from "recoil";
 
 function Side() {
     const side = menuListData.sideList;
-    const [setSelectData] = useSetRecoilState(selectDataState);
+    const [selectData, setSelectData] = useRecoilState(selectDataState);
 
     const btnMinusClick = (e) => {
         const btnCount = e.target.parentNode;
