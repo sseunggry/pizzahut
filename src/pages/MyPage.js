@@ -7,7 +7,7 @@ import CartList from "../components/CartList";
 
 function MyPage() {
     return (
-        <Layout header={{title: "마이페이지"}}>
+        <Layout header={{title: "마이페이지"}} bottomMenu={false}>
             <div className="login-info">
                 <h2 className="title">
                     피자알볼로의 <br/>

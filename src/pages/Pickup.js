@@ -10,7 +10,7 @@ import RegionStore from "../components/RegionStore";
 function Pickup(){
     const pickupStoreTab = useRecoilValue(pickupStoreTabState);
     return(
-        <Layout header={{title: '포장 매장 선택', backBtn: 'true'}} bottomMenu="false">
+        <Layout header={{title: '포장 매장 선택', backBtn: 'true'}} bottomMenu={false}>
             <Tab
                 addClass="-line"
                 list={["근처 매장 찾기", "지역/매장명 찾기"]}
