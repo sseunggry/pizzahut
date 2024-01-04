@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/pizzahut/static/css/main.08a5b5d9.css",
-    "main.js": "/pizzahut/static/js/main.ec2dceeb.js",
+    "main.js": "/pizzahut/static/js/main.f9f217c4.js",
     "static/media/ico_empty_cart.png": "/pizzahut/static/media/ico_empty_cart.218505c14dd0f6b7f230.png",
     "index.html": "/pizzahut/index.html",
     "main.08a5b5d9.css.map": "/pizzahut/static/css/main.08a5b5d9.css.map",
-    "main.ec2dceeb.js.map": "/pizzahut/static/js/main.ec2dceeb.js.map"
+    "main.f9f217c4.js.map": "/pizzahut/static/js/main.f9f217c4.js.map"
   },
   "entrypoints": [
     "static/css/main.08a5b5d9.css",
-    "static/js/main.ec2dceeb.js"
+    "static/js/main.f9f217c4.js"
   ]
 }
