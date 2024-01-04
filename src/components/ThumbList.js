@@ -2,8 +2,8 @@ import {Link} from "react-router-dom";
 
 import '../styles/menu.scss';
 
-const contentImg = "/resource/img/contents";
 import {priceDot} from "../js/commonFn";
+import {contentImg} from "../recoil/atoms";
 
 function ThumbList({data}){
     return (

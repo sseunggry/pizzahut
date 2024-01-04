@@ -31,7 +31,7 @@ function SlideBanner({list, addClass}){
                         <h3 className="tit">{tit}</h3>
                     </div>
                     <div className="img-con">
-                        <img src={`/resource/img/contents/${img}`} alt="" />
+                        <img src={`${process.env.PUBLIC_URL}/resource/img/contents/${img}`} alt="" />
                     </div>
                 </SwiperSlide>
             )}

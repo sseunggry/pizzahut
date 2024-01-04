@@ -6,8 +6,8 @@ import storeData from "../data/store_list.json";
 import {recoilPersist} from "recoil-persist";
 
 //variable
-export const commonImg = "/resource/img/common";
-export const contentImg = "/resource/img/contents";
+export const commonImg = `${process.env.PUBLIC_URL}/resource/img/common`;
+export const contentImg = `${process.env.PUBLIC_URL}/resource/img/contents`;
 export const menu = [
     {
         link: "/",
