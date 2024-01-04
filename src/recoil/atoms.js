@@ -20,7 +20,7 @@ export const menu = [
         text: "메뉴",
     },
     {
-        link: "/myPage",
+        link: "/mypage",
         img: "ico_menu_my",
         text: "마이",
     },

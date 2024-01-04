@@ -188,12 +188,11 @@ function Detail(){
                     </div>
                 </div>
                 <Button text="장바구니 담기" size="m" type="primary" addClass="btn-floating btn-cart" onClick={cartBtnOnClick}/>
-                {/*<Button text={`총 ${count}개 `} size="m" type="primary" addClass="btn-floating btn-cart" onClick={cartBtnOnClick}/>*/}
             </Layout>
             <Popup btnText="확인" dataPop="popupCart" btnClose="true">
                 <p className="txt">장바구니에 담겼습니다. <br/> 장바구니로 이동할까요?</p>
                 <div className="popup-btn">
-                    <Button text="확인" size="m" type="primary" link="/myPage"/>
+                    <Button text="확인" size="m" type="primary" link="/mypage"/>
                     <Button text="취소" size="m" type="line"  tag="button" addClass="btn-close" onClick={popupClose}/>
                 </div>
             </Popup>

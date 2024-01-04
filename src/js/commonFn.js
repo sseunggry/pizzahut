@@ -23,7 +23,6 @@ export const popupOpen = (popData) => {
 //팝업 닫기
 export const popupClose = (e) => {
     const popupWrap = parentNodeFind(e.target, 'popup-wrap');
-    // const popupWrap = parentNodeFind(e, '12325456');
 
     popupWrap.classList.remove('open');
 }
