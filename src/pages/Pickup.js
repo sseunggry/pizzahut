@@ -18,21 +18,6 @@ function Pickup(){
             />
             {pickupStoreTab === 'nearby' && <NearByStore />}
             {pickupStoreTab === 'region' && <RegionStore />}
-
-            {/*
-            <div className="tab-wrap">
-                <Tab
-                    addClass="-line"
-                    list={["근처 매장 찾기", "지역/매장명 찾기"]}
-                    listClass={["nearby-store", "region-store"]}
-                />
-                <div className="tab-cont">
-                    <div className="tab-panel">
-
-                    </div>
-                </div>
-            </div>
-            */}
         </Layout>
     )
 }

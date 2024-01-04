@@ -143,6 +143,7 @@
             position: relative;
             display: inline-block;
             padding: 0 0.42vw;
+            font-family: $roboto;
             font-size: 3.33vw;
             font-weight: 400;
             color: #bbb;
@@ -161,10 +162,12 @@
         }
 
         .sale_percent {
+            font-family: $roboto;
             margin: 0 1.67vw 0;
         }
 
         .price {
+            font-family: $roboto;
             font-size: 3.33vw;
             font-weight: 500;
         }
@@ -217,6 +220,7 @@
         font-size: 3.33vw;
 
         span{
+            font-family: $roboto;
             font-size: 5.56vw;
             font-weight: 700;
         }
