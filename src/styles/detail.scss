@@ -1,3 +1,4 @@
+@import "./base/variables";
 @import "./base/mixins";
 
 .notice-txt{
@@ -130,12 +131,14 @@
 
 						.sale {
 							margin-right: 2.78vw;
+							font-family: $roboto;
 							font-size: 3.89vw;
 							font-weight: 500;
 						}
 						.origin {
 							position: relative;
 							padding: 0 0.42vw;
+							font-family: $roboto;
 							font-size: 3.33vw;
 							font-weight: 300;
 							color: #bbb;
@@ -181,6 +184,7 @@
 					font-size: 3.33vw;
 				}
 				.price {
+					font-family: $roboto;
 					font-size: 3.89vw;
 					font-weight: 700;
 				}
@@ -224,6 +228,7 @@
 			}
 			.count {
 				margin: 0 auto;
+				font-family: $roboto;
 				font-size: 3.89vw;
 				text-align: center;
 			}
