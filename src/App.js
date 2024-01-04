@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {RecoilRoot} from "recoil";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
@@ -11,12 +11,12 @@ import Pickup from "./pages/Pickup";
 
 import "./styles/base/_index.scss";
 import { RecoilEnv } from 'recoil';
-RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false
+RecoilEnv.RECOIL_DUPLICATE_ATOM_KEY_CHECKING_ENABLED = false;
 
 function App() {
   return (
       <RecoilRoot>
-          <Router>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
               <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/menu" element={<Menu />} />
@@ -27,7 +27,7 @@ function App() {
                   <Route path="/address" element={<Address />} />
                   <Route path="/pickup" element={<Pickup />} />
               </Routes>
-          </Router>
+          </BrowserRouter>
       </RecoilRoot>
   );
 }
