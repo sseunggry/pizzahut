@@ -48,9 +48,11 @@
         }
     }
 }
-
-.cart-list {
+.cart-list-box{
     padding-bottom: 36vw;
+
+    .cart-list {
+
     li {
         position: relative;
         display: flex;
@@ -171,6 +173,11 @@
             font-size: 3.33vw;
             font-weight: 500;
         }
+    }
+}
+    .btn-add-order{
+        margin-top: 4.17vw;
+        border-radius: 2.78vw;
     }
 }
 

@@ -38,7 +38,6 @@ function Detail(){
             });
 
             const pizzaImg = document.querySelector('.detail-info .img-con img');
-            // pizzaImg.src = `${contentImg}/pizza_full_01_0${(index+1)}.png`;
 
             if(index === 0){
                 fullImg = fullImg1;
@@ -49,7 +48,6 @@ function Detail(){
             }
 
             pizzaImg.src = `${contentImg}/${fullImg}`;
-
         }
     }
     const checkOnChange = (e) => {
@@ -76,10 +74,15 @@ function Detail(){
         return [...updatedSet];
     }
     const cartBtnOnClick = () => {
-        setData();
-        popupOpen('popupCart');
+        if(inputValue.size) {
+            setData();
+            popupOpen('popupCart');
+        } else {
+            popupOpen('popupSelectSizeAlert');
+        }
     }
 
+    console.log(inputValue);
     const setData = () => {
         const toppingPrice = topping.size === 0 ? 0 : toppingList.filter(el => el.name === topping[0] || el.name === topping[1]).map(({price}) => price).reduce((acc, cur) => acc + cur);
 
@@ -109,6 +112,13 @@ function Detail(){
         const data = menuListData.pizzaList;
         const idx = data.findIndex((item) =>  item.id === id);
         setItem(data[idx]);
+
+        const firstEdgeList = document.querySelector('.menu-detail .edge-list .inp-radio:first-of-type input');
+        firstEdgeList.checked = true;
+
+        setInputValue({
+            'edge': firstEdgeList.value
+        });
     }, []);
 
     return (
@@ -135,7 +145,7 @@ function Detail(){
                                     </Input>
                                 ))}
                             </dd>
-                            <dd className="notice-txt">할인 적용 시 ‘엣지 추가 금액’은 할인이 불가합니다.</dd>
+                            {/*<dd className="notice-txt">할인 적용 시 ‘엣지 추가 금액’은 할인이 불가합니다.</dd>*/}
                         </dl>
                         <dl>
                             <dt>사이즈 선택</dt>
@@ -198,6 +208,12 @@ function Detail(){
             </Popup>
             <Popup btnText="확인" dataPop="popupAlert">
                 <p className="txt">피자 1판당, 최대 2개 <br/> 토핑 추가 가능합니다. (중복 불가)</p>
+                <div className="popup-btn">
+                    <Button text="확인" size="m" type="primary" onClick={popupClose}/>
+                </div>
+            </Popup>
+            <Popup btnText="확인" dataPop="popupSelectSizeAlert">
+                <p className="txt">피자 사이즈를 <br/> 선택해 주세요!</p>
                 <div className="popup-btn">
                     <Button text="확인" size="m" type="primary" onClick={popupClose}/>
                 </div>

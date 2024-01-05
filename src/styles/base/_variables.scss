@@ -2,7 +2,7 @@
 
 //font
 // 본문(paragraph) 사이즈
-$body-fz: 16px;
+$body-fz: 3.33vw;
 
 // 본문(paragraph) 기본 컬러
 $base-color: #000;
@@ -14,8 +14,8 @@ $line-height: 1.4;
 $base-line: $body-fz * 1.4;
 
 // 적용 웹 폰트
-$font-family-ko: 'Noto Sans KR', 'Roboto', sans-serif;
-$font-family-en: 'Noto Sans KR', 'Roboto', Arial, sans-serif, serif;
+$font-family-ko: 'Roboto', 'Noto Sans KR', sans-serif;
+$font-family-en: 'Roboto', Arial, sans-serif, serif;
 $roboto: 'Roboto', sans-serif;
 
 //color
