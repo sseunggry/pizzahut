@@ -82,7 +82,6 @@ function Detail(){
         }
     }
 
-    console.log(inputValue);
     const setData = () => {
         const toppingPrice = topping.size === 0 ? 0 : toppingList.filter(el => el.name === topping[0] || el.name === topping[1]).map(({price}) => price).reduce((acc, cur) => acc + cur);
 
