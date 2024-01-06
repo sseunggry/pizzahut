@@ -51,7 +51,7 @@ function CartList() {
                                                 )
                                             }
                                             {
-                                                !topping.size ? '' : (
+                                                !topping.length ? '' : (
                                                     <dl>
                                                         <dt>토핑</dt>
                                                         <dd>
