@@ -27,7 +27,10 @@
             "priceMedium": 29900,
             "priceLarge": 35900,
             "id": "mockdong",
-            "thumbImg": "pizza_thumb_03.png"
+            "thumbImg": "pizza_thumb_03.png",
+            "fullImg1": "pizza_full_03_01.png",
+            "fullImg2": "pizza_full_03_02.png",
+            "fullImg3": "pizza_full_03_03.png"
         },
         {
             "flag": "new",
@@ -35,14 +38,20 @@
             "priceMedium": 23200,
             "priceLarge": 28900,
             "id": "pumpkin",
-            "thumbImg": "pizza_thumb_04.png"
+            "thumbImg": "pizza_thumb_04.png",
+            "fullImg1": "pizza_full_04_01.png",
+            "fullImg2": "pizza_full_04_02.png",
+            "fullImg3": "pizza_full_04_03.png"
         },
         {
             "flag": "best",
             "name": "콤비네이션 피자",
             "priceLarge": 25300,
             "id": "combination",
-            "thumbImg": "pizza_thumb_05.png"
+            "thumbImg": "pizza_thumb_05.png",
+            "fullImg1": "pizza_full_05_01.png",
+            "fullImg2": "pizza_full_05_02.png",
+            "fullImg3": "pizza_full_05_03.png"
         },
         {
             "flag": "new",
@@ -50,7 +59,10 @@
             "priceMedium": 28900,
             "priceLarge": 30400,
             "id": "laughter",
-            "thumbImg": "pizza_thumb_06.png"
+            "thumbImg": "pizza_thumb_06.png",
+            "fullImg1": "pizza_full_06_01.png",
+            "fullImg2": "pizza_full_06_02.png",
+            "fullImg3": "pizza_full_06_03.png"
         }
     ],
     "setList": [
@@ -92,34 +104,40 @@
     ],
     "sideList": [
         {
+            "type": "side",
             "sale": 50,
             "name": "상하이 쉬림프 파스타",
             "originPrice": 9800,
             "thumbImg": "side_thumb_01.png"
         },
         {
+            "type": "side",
             "sale": 50,
             "name": "크림 치킨 파스타",
             "originPrice": 8800,
             "thumbImg": "side_thumb_02.png"
         },
         {
+            "type": "side",
             "name": "팝콘 치킨(20ea)",
             "originPrice": 5800,
             "thumbImg": "side_thumb_03.png"
         },
         {
+            "type": "side",
             "name": "고르곤졸라 치즈볼",
             "originPrice": 5800,
             "thumbImg": "side_thumb_04.png"
         },
         {
+            "type": "side",
             "sale": 30,
             "name": "대만 연유 치즈볼",
             "originPrice": 4800,
             "thumbImg": "side_thumb_05.png"
         },
         {
+            "type": "side",
             "name": "순살 허브치킨(8조각)",
             "originPrice": 9900,
             "thumbImg": "side_thumb_06.png"

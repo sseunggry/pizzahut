@@ -1,6 +1,6 @@
 import "../styles/popup.scss";
 
-function Popup({children, addClass, dataPop = ''}){
+function Popup({children, addClass = '', dataPop = ''}){
     return (
         <div className={`popup-wrap ${addClass}`} data-pop={dataPop}>
             <div className="popup-inner">
