@@ -8,7 +8,6 @@
 .container {
     overflow: hidden auto;
     padding: 0 5.56vw;
-    //padding-bottom: 8.33vw;
     height: calc(100vh - 33.34vw);
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -24,4 +23,25 @@
 
 .inner {
     padding: 0 5.56vw;
+}
+
+@media (min-width: 1080px) {
+    .wrap {
+        width: 1080px;
+        margin: 0 auto;
+        padding: 120px 0;
+    }
+
+    .container {
+        padding: 0 40px;
+        height: calc(100vh - 240px);
+
+        &.no-bottom{
+            height: calc(100vh - 120px);
+        }
+    }
+
+    .inner {
+        padding: 0 40px;
+    }
 }

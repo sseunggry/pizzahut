@@ -1,7 +1,6 @@
 @import "./base/variables";
 @import "./base/mixins";
 
-
 .login-info{
     margin-left: -5.56vw;
     padding: 11.12vw 5.56vw;
@@ -32,17 +31,17 @@
 
         li {
             a {
-                color: #bbb;
+                color: $c-gray2;
             }
 
             &.active {
-                background: #fff;
-                border: 0.28vw solid #41b6e5;
+                background: $c-white;
+                border: 0.28vw solid $c-blue;
                 border-radius: 2.17vw 0 0 2.17vw;
 
                 a {
                     font-weight: 500;
-                    color: #41b6e5;
+                    color: $c-blue;
                 }
             }
         }
@@ -100,7 +99,7 @@
                 margin-right: 2.78vw;
                 flex-shrink: 0;
                 width: 20%;
-                color: #666;
+                color: $c-gray4;
                 line-height: 1.5;
             }
 
@@ -148,7 +147,7 @@
             font-family: $roboto;
             font-size: 3.33vw;
             font-weight: 400;
-            color: #bbb;
+            color: $c-gray2;
 
             &::after {
                 content: '';
@@ -159,7 +158,7 @@
                 display: block;
                 width: 100%;
                 height: 0.28vw;
-                background: #bbb;
+                background: $c-gray2;
             }
         }
 
@@ -188,7 +187,7 @@
         margin-bottom: 8.33vw;
         font-size: 3.33vw;
         font-weight: 300;
-        color: #999;
+        color: $c-gray4;
         text-align: center;
 
         &::before {
@@ -216,7 +215,7 @@
     bottom: 0;
     width: 100%;
     padding: 0 5.56vw;
-    border-top: 0.14vw solid #ddd;
+    border-top: 0.14vw solid $c-gray1;
     background-color: $c-white;
 
     .price{
@@ -235,5 +234,151 @@
     .btn-all-order{
         margin: 0 -5.56vw;
         border-radius: 0;
+    }
+}
+
+@media (min-width: 1080px) {
+    .login-info{
+        margin-left: -40px;
+        padding: 80px 40px;
+        width: calc(100% + 80px);
+
+        .title{
+            margin-bottom: 40px;
+            font-size: 52px;
+        }
+
+        .btn-wrap{
+            gap: 32px;
+        }
+    }
+
+    .cart-info {
+        padding: 80px 0 0;
+
+        .tabMenu {
+            border-radius: 16px;
+            li {
+                &.active {
+                    border-width: 2px;
+                    border-radius: 16px 0 0 16px;
+                }
+            }
+        }
+    }
+    .cart-list-box{
+        padding-bottom: 260px;
+
+        .cart-list {
+            li {
+                margin-top: 40px;
+                padding: 40px;
+                border-radius: 30px;
+                box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+            }
+
+            img {
+                margin-top: -10px;
+                height: 84px;
+            }
+
+            .txt-con {
+                p {
+                    margin-bottom: 20px;
+                    padding: 10px 0;
+                    font-size: 32px;
+
+                    .count{
+                        margin-left: 10px;
+                    }
+                }
+
+                dl {
+                    font-size: 24px;
+                    dt {
+                        margin-right: 20px;
+                    }
+
+                    + dl {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            .btn-delete {
+                top: 40px;
+                right: 40px;
+                width: 48px;
+                height: 48px;
+
+                &::after {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            .price-con {
+                margin: 40px 0 0 auto;
+
+                span {
+                    font-size: 24px;
+                }
+
+                .origin_price {
+                    padding: 0 3px;
+                    font-size: 24px;
+
+                    &::after {
+                        height: 2px;
+                    }
+                }
+
+                .sale_percent {
+                    margin: 0 12px 0;
+                }
+
+                .price {
+                    font-size: 24px;
+                }
+            }
+        }
+        .btn-add-order{
+            margin-top: 30px;
+            border-radius: 20px;
+        }
+    }
+
+    .cart-empty {
+        padding: 80px 0;
+
+        p {
+            margin-bottom: 60px;
+            font-size: 24px;
+
+            &::before {
+                margin: 20px auto 40px;
+
+                width: 480px;
+                height: 232px;
+            }
+        }
+    }
+
+    .cart-total-price{
+        padding: 0 40px;
+        border-top-width: 1px;
+
+        .price{
+            padding: 24px 0;
+            font-size: 24px;
+
+            span{
+                font-size: 40px;
+            }
+        }
+        .btn-all-order{
+            margin: 0 -40px;
+            border-radius: 0;
+        }
     }
 }

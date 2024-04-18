@@ -11,6 +11,10 @@ html{
     font-weight: 400;
     line-height: $line-height;
     color: $base-color;
+
+    @media (min-width: 1080px) {
+      font-size: $body-fz-pc;
+    }
   }
   &[lang="en"], *[lang="en"]{
     font-family: $font-family-en;
@@ -18,6 +22,10 @@ html{
     body{
       font-size: $body-fz;
       font-weight: 400;
+
+      @media (min-width: 1080px) {
+        font-size: $body-fz-pc;
+      }
     }
   }
 }

@@ -42,18 +42,18 @@
       font-family: $roboto;
       font-size: 2.78vw;
       font-weight: 700;
-      color: #fff;
+      color: $c-white;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.07vw;
       border-radius: 6.94vw;
 
       &.best {
-        background: #41b6e5;
+        background: $c-blue;
       }
 
       &.new, &.discount {
-        background: #ea4c31;
+        background: $c-red;
       }
     }
   }
@@ -91,7 +91,7 @@
           height: 6.67vw;
           font-size: 2.78vw;
           font-weight: 700;
-          color: #41b6e5;
+          color: $c-blue;
           background-color: #e1f0f8;
           border-radius: 50%;
         }
@@ -113,7 +113,7 @@
         padding: 0 0.42vw;
         font-family: $roboto;
         font-size: 3.33vw;
-        color: #bbb;
+        color: $c-gray2;
 
         &::after {
           content: '';
@@ -124,7 +124,7 @@
           display: block;
           width: 100%;
           height: 0.28vw;
-          background: #bbb;
+          background: $c-gray2;
         }
       }
     }
@@ -140,7 +140,7 @@
       .info {
         font-size: 3.33vw;
         font-weight: 500;
-        color: #666;
+        color: $c-gray4;
       }
     }
   }
@@ -170,7 +170,7 @@
       margin: 0 2.78vw;
       width: 0.28vw;
       height: 2.50vw;
-      background: #bbb;
+      background: $c-gray2;
     }
 
     &:last-child::after {
@@ -192,7 +192,7 @@
       a {
         overflow: hidden;
         padding: 0;
-        background: #f8f8f8;
+        background: $c-gray3;
         border-radius: 4.17vw;
       }
     }
@@ -220,15 +220,15 @@
 
       .price {
         .size {
-          color: #fff;
-          background: #41b6e5;
+          color: $c-white;
+          background: $c-blue;
         }
 
         .origin-price {
           margin-left: 0;
           font-size: 4.44vw;
           font-weight: 500;
-          color: #222;
+          color: $c-gray6;
 
           &::after {
             display: none;
@@ -245,7 +245,7 @@
           margin: 0 1vw;
           width: 2.78vw;
           height: 2.78vw;
-          background: #ddd;
+          background: $c-gray1;
           border-radius: 50%;
 
           &::before {
@@ -257,7 +257,7 @@
             display: block;
             width: 50%;
             height: 0.28vw;
-            background: #fff;
+            background: $c-white;
             border-radius: 0.28vw;
           }
           &::after {
@@ -269,7 +269,7 @@
             display: block;
             width: 0.28vw;
             height: 50%;
-            background: #fff;
+            background: $c-white;
             border-radius: 0.28vw;
           }
         }
@@ -330,7 +330,7 @@
 
         &.large{
           margin-right: 0;
-          color: #222;
+          color: $c-gray6;
           font-size: 4.00vw;
           font-weight: 700;
 
@@ -352,7 +352,7 @@
   margin-top: 5.56vw;
   width: 100%;
   height: 13.89vw;
-  border: 0.28vw solid #bbb;
+  border: 0.28vw solid $c-gray2;
   border-radius: 6.94vw;
 
   button {
@@ -381,5 +381,204 @@
     width: 100%;
     font-size: 3.89vw;
     text-align: center;
+  }
+}
+
+@media (min-width: 1080px) {
+  .thumb-list {
+    li a {
+      padding: 60px 0;
+    }
+
+    .thumb-img {
+      .img-con {
+        img{
+          margin-top: 40px;
+        }
+      }
+
+      .flag {
+        padding: 10px 20px;
+        font-size: 20px;
+        letter-spacing: 1px;
+        border-radius: 50px;
+      }
+    }
+
+    .thumb-txt {
+      margin-left: 6%;
+      width: 58%;
+
+      dt {
+        max-height: 124px;
+        font-size: 48px;
+      }
+
+      .price {
+        margin-top: 30px;
+        .list {
+          .size {
+            margin-right: 20px;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
+          }
+        }
+
+        > .list + .list {
+          margin-top: 20px;
+        }
+
+        .sale-price {
+          font-size: 28px;
+        }
+        .origin-price {
+          margin-left: 20px;
+          padding: 0 3px;
+          font-size: 24px;
+
+          &::after {
+            height: 2px;
+          }
+        }
+      }
+      .info-txt {
+        margin-top: 30px;
+
+        span {
+          font-size: 24px;
+        }
+
+        .info {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  /* pizza */
+  .menu-pizza {
+    li {
+      &::after {
+        height: 2px;
+      }
+    }
+
+    .thumb-txt .info-txt span {
+      &::after {
+        margin: 0 20px;
+        width: 2px;
+        height: 18px;
+      }
+    }
+  }
+
+  /* set */
+  .menu-set{
+    .thumb-list{
+      padding: 60px 0;
+
+      li {
+        + li {
+          margin-top: 40px;
+        }
+
+        a {
+          border-radius: 30px;
+        }
+      }
+
+      .thumb-img {
+        .flag {
+          top: 20px;
+          left: 20px;
+        }
+      }
+
+      .thumb-txt {
+        .price {
+          .origin-price {
+            font-size: 32px;
+          }
+        }
+        .info-txt {
+          margin-top: 12px;
+
+          .ico-plus {
+            margin: 0 7px;
+            width: 20px;
+            height: 20px;
+
+            &::before {
+              height: 2px;
+              border-radius: 2px;
+            }
+            &::after {
+              width: 2px;
+              border-radius: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* side */
+  .menu-side{
+    padding-bottom: 120px;
+
+    .thumb-list{
+      gap: 36px 80px;
+      padding: 60px 0;
+
+      li a{
+        margin-bottom: 40px;
+      }
+
+      .thumb-img {
+        .flag {
+          right: 20px;
+        }
+      }
+
+      .thumb-txt {
+        dt {
+          margin-bottom: 30px;
+          font-size: 28px;
+        }
+
+        .origin-price{
+          margin-left: 0;
+          margin-right: 20px;
+
+          &.large{
+            margin-right: 0;
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+
+  /* count */
+  .btn-count {
+    padding: 0 18px;
+    margin-top: 40px;
+    height: 100px;
+    border-width: 2px;
+    border-radius: 50px;
+
+    button {
+      width: 80px;
+
+      &::after {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .count {
+      font-size: 28px;
+    }
   }
 }

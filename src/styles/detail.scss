@@ -4,7 +4,7 @@
 .notice-txt{
 	margin-top: 6.94vw;
     font-size: 3.33vw;
-    color: #999;
+    color: $c-gray4;
 
 	&::before{
 		content: '※'; 
@@ -35,7 +35,7 @@
 			margin: 0 auto;
 			width: 83.33vw;
 			height: 83.33vw;
-			background: #f8f8f8;
+			background: $c-gray3;
 			border-radius: 50%;
 	
 			img {
@@ -102,8 +102,8 @@
 				}
 
 				:checked ~ .inp-label{
-					background: #41b6e5;
-					color: #fff;
+					background: $c-blue;
+					color: $c-white;
 
 					.price {
 						.origin {
@@ -121,10 +121,10 @@
 					padding: 0 8.33vw;
 					width: 100%;
 					height: 13.89vw;
-					background: #f8f8f8;
+					background: $c-gray3;
 					border-radius: 1.39vw;
 					font-size: 3.89vw;
-					color: #222;
+					color: $c-gray6;
 
 					.price {
 						margin-left: auto;
@@ -141,7 +141,7 @@
 							font-family: $roboto;
 							font-size: 3.33vw;
 							font-weight: 300;
-							color: #bbb;
+							color: $c-gray2;
 							&::after {
 								content: '';
 								position: absolute;
@@ -151,7 +151,7 @@
 								display: block;
 								width: 100%;
 								height: 0.14vw;
-								background: #bbb;
+								background: $c-gray2;
 							}
 						}
 					}
@@ -196,7 +196,7 @@
 			padding: 0 5.56vw;
 			width: 100%;
 			height: 13.89vw;
-			border: 0.28vw solid #bbb;
+			border: 0.28vw solid $c-gray2;
 			border-radius: 6.94vw;
 
 			button {
@@ -247,5 +247,150 @@
 		width: 100%;
 		height: 16.67vw;
 		border-radius: 0;
+	}
+}
+
+@media (min-width: 1080px) {
+	.notice-txt{
+		margin-top: 50px;
+		font-size: 24px;
+
+		&::before{
+			margin-right: 8px;
+		}
+	}
+
+	.menu-detail {
+		padding: 50px 0 120px;
+
+		.detail-info{
+			.tit-con {
+				margin-bottom: 40px;
+				h3 {
+					font-size: 52px;
+				}
+				p {
+					margin-top: 20px;
+					font-size: 24px;
+				}
+			}
+			.img-con {
+				width: 600px;
+				height: 600px;
+			}
+		}
+		.select-con {
+			padding-top: 100px;
+
+			> dl{
+				margin-bottom: 101px;
+
+				&:last-of-type{
+					margin-bottom: 60px;
+				}
+			}
+
+			dt{
+				margin-bottom: 30px;
+				font-size: 36px;
+			}
+			.edge-list {
+				.inp-radio{
+					:checked ~ .inp-label{
+						img {
+							width: 180px;
+							height: 180px;
+						}
+					}
+
+					.inp-label{
+						img{
+							width: 150px;
+							height: 150px;
+						}
+						span{
+							margin-top: 10px;
+							font-size: 28px;
+						}
+					}
+				}
+			}
+			.size-list{
+				.inp-radio{
+					+ .inp-radio{
+						margin-top: 12px;
+					}
+
+					.inp-label{
+						padding: 0 60px;
+						height: 100px;
+						border-radius: 10px;
+						font-size: 28px;
+
+						.price {
+							.sale {
+								margin-right: 20px;
+								font-size: 28px;
+							}
+							.origin {
+								padding: 0 3px;
+								font-size: 24px;
+
+								&::after {
+									height: 1px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.topping-list {
+				margin: 0 -40px;
+				padding: 0 40px;
+
+				li {
+					margin-bottom: 20px;
+
+					img {
+						width: 100px;
+						height: 100px;
+					}
+					.name {
+						margin: 20px 0 10px;
+						font-size: 24px;
+					}
+					.price {
+						font-size: 28px;
+					}
+				}
+			}
+			.btn-count {
+				padding: 0 40px;
+				height: 100px;
+				border-width: 2px;
+				border-radius: 50px;
+
+				button {
+					width: 80px;
+					height: 100px;
+
+					&::after {
+						width: 30px;
+						height: 30px;
+					}
+				}
+				.count {
+					font-size: 28px;
+				}
+				~ .notice-txt {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+	.btn-floating{
+		&.btn-cart{
+			height: 120px;
+		}
 	}
 }

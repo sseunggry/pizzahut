@@ -41,5 +41,24 @@
         border: 0.28vw solid $c-blue;
         color: $c-blue;
     }
+}
 
+@media (min-width: 1080px) {
+    .btn{
+        &-s{
+            height: 80px;
+            font-size: 24px;
+            border-radius: 44px;
+        }
+
+        &-m{
+            height: 100px;
+            font-size: 32px;
+            border-radius: 61px;
+        }
+
+        &.line{
+            border-width: 2px;
+        }
+    }
 }
