@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/pizzahut/static/css/main.1d68a37f.css",
+    "main.css": "/pizzahut/static/css/main.f80c41ce.css",
     "main.js": "/pizzahut/static/js/main.48a09d41.js",
     "static/media/NotoSansKR-Regular.woff2": "/pizzahut/static/media/NotoSansKR-Regular.e95adf0e9aeddac43f42.woff2",
     "static/media/NotoSansKR-Bold.woff2": "/pizzahut/static/media/NotoSansKR-Bold.a4ecc3f7a43f7d43ce24.woff2",
@@ -17,11 +17,11 @@
     "static/media/NotoSansKR-Thin.woff2": "/pizzahut/static/media/NotoSansKR-Thin.9d23ca66b990f383e7a7.woff2",
     "static/media/ico_empty_cart.png": "/pizzahut/static/media/ico_empty_cart.218505c14dd0f6b7f230.png",
     "index.html": "/pizzahut/index.html",
-    "main.1d68a37f.css.map": "/pizzahut/static/css/main.1d68a37f.css.map",
+    "main.f80c41ce.css.map": "/pizzahut/static/css/main.f80c41ce.css.map",
     "main.48a09d41.js.map": "/pizzahut/static/js/main.48a09d41.js.map"
   },
   "entrypoints": [
-    "static/css/main.1d68a37f.css",
+    "static/css/main.f80c41ce.css",
     "static/js/main.48a09d41.js"
   ]
 }
